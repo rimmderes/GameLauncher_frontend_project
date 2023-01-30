@@ -53,19 +53,18 @@ const HomeMenuContainer = () => {
     return ( 
         <BrowserRouter>
             <div>
+                <nav>
                 <h1>Negative Infinity</h1>
 
                 <ul>
-                    <li>
-                        <Link to="/all-chocolates">All Chocolates</Link>
-                    </li>
-                    <li>
-                        <Link to="/new-chocolate">Add new chocolate</Link>
-                    </li>
-                    <li>
-                        <Link to="/edit-chocolate/:id">Edit existing chocolate</Link>
-                    </li>
+                    <button>
+                        <Link to="/">Home</Link>
+                    </button>
+                    <button>
+                        <Link to="/my-games">My Games</Link>
+                    </button>
                 </ul>
+                
                 
                 <Search filterGames={filterGames}/>
 
@@ -85,6 +84,7 @@ const HomeMenuContainer = () => {
                 
                 > Sign Up </button>
                 {signupModal && <SignupModal closeModal={setSignupModal}/>}
+                </nav>
 
                 <Routes>
                     <Route path="/" element={
@@ -97,6 +97,7 @@ const HomeMenuContainer = () => {
                         />}
                     />
                 </Routes>
+
                 
             </div>
         </BrowserRouter>
