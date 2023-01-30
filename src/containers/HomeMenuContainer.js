@@ -54,6 +54,19 @@ const HomeMenuContainer = () => {
         <BrowserRouter>
             <div>
                 <h1>Negative Infinity</h1>
+
+                <ul>
+                    <li>
+                        <Link to="/all-chocolates">All Chocolates</Link>
+                    </li>
+                    <li>
+                        <Link to="/new-chocolate">Add new chocolate</Link>
+                    </li>
+                    <li>
+                        <Link to="/edit-chocolate/:id">Edit existing chocolate</Link>
+                    </li>
+                </ul>
+                
                 <Search filterGames={filterGames}/>
 
                 <button className="loginButton"
@@ -74,13 +87,17 @@ const HomeMenuContainer = () => {
                 {signupModal && <SignupModal closeModal={setSignupModal}/>}
 
                 <Routes>
+                    <Route path="/" element={
+                        <GamesList games={filteredGames ? filteredGames : games}/>
+                    }
+                    />
                     <Route path="/games/:id" element={
                         <SpecificGame
                             games={games}
                         />}
                     />
                 </Routes>
-                <GamesList games={filteredGames ? filteredGames : games}/>
+                
             </div>
         </BrowserRouter>
      );
