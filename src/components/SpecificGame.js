@@ -11,8 +11,9 @@ const SpecificGame = ({games})=>{
  
     return(
         <>
-        <p>specific game</p>
-        <h4>Name: {game.name}</h4>
+        <p>Specific game</p>
+        <h1>{game.name}</h1>
+        <h3>{`Price: £${game.price}`}</h3>
         <p>Publisher: {game.publisher}</p>
         <p>Genre: {game.genre}</p>
         <p>Age: {game.ageRating}</p>
