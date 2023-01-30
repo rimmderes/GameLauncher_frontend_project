@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import GamesList from "../components/GamesList";
-import Login from "../components/Login";
-import Signup from "../components/Signup";
+import LoginModal from "../components/LoginModal";
+import SignupModal from "../components/SignupModal";
 
 const HomeMenuContainer = () => {
 
@@ -10,6 +9,9 @@ const HomeMenuContainer = () => {
 
     // const [user, setUser] = useState(null);
     const [games, setGames] = useState([]);
+    const [loginModal, setLoginModal] = useState(false);
+    const [signupModal, setSignupModal] = useState(false);
+
 
     useEffect(() => {
         const fetchData = async() => {
@@ -23,26 +25,34 @@ const HomeMenuContainer = () => {
 
 
     return ( 
-            <BrowserRouter>
             <div>
                 <h1>Negative Infinity</h1>
-                <ul>
+                {/* <ul>
                 <li>Category</li>
-                <li> <Link to="/login">Login</Link> </li>
-                 <li> <Link to="/signup">Signup</Link> </li>
-                </ul>
+                </ul> */}
 
+                <button className="loginButton"
+                onClick={() => {
+                    setLoginModal(true);
+                }}
                 
-                <Routes>
+                > Login </button>
+                {loginModal && <LoginModal closeModal={setLoginModal}/>}
+                 
+                 
+                 <button className="signupButton"
+                 onClick={() => {
+                    setSignupModal(true);
+                }}
                 
-                <Route path="/login" element={ <Login /> }/>
-                <Route path="/signup" element={ <Signup /> }/> 
-                </Routes>
+                > Sign Up </button>
+                {signupModal && <SignupModal closeModal={setSignupModal}/>}
+                
                 
 
                 <GamesList games={games}/>
             </div>
-            </BrowserRouter>
+           
             
      );
 }
