@@ -13,7 +13,7 @@ const HomeMenuContainer = () => {
 
     const SERVER_URL = "http://localhost:8080"
 
-    // const [user, setUser] = useState(null);
+    const [account, setAccount] = useState(null);
     const [games, setGames] = useState([]);
     const [filteredGames, setfilteredGames] = useState();
     const [loginModal, setLoginModal] = useState(false);
@@ -50,6 +50,18 @@ const HomeMenuContainer = () => {
 
         setfilteredGames(foundGamesByAge)
       }
+
+
+        const postAccount = async (newAccount) => {
+            const response = await fetch("http://localhost:8080/accounts", {
+                method: "POST",
+                headers: {'Content-Type' : 'application/json'},
+                body: JSON.stringify(newAccount)
+            }) 
+            const savedAccount = await response.json();
+            setAccount(savedAccount)
+            };
+        
     
 
 
@@ -92,7 +104,7 @@ const HomeMenuContainer = () => {
                 
                     
                 > Sign Up </li>
-                {signupModal && <SignupModal closeModal={setSignupModal}/>}
+                {signupModal && <SignupModal closeModal={setSignupModal} postAccount={postAccount}/>}
                 </ul>
                 </div>
                 

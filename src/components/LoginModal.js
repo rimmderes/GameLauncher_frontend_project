@@ -31,7 +31,7 @@ const LoginModal = ({closeModal}) => {
                     <label className="login_label" htmlFor="login_input">Password:</label>
                     <input 
                         type="password"
-                        placeholder="Type username here..." className="login_input" 
+                        placeholder="Type password here..." className="login_input" 
                         value={password}
                         onChange={event => setPassword(event.target.value)} />
 

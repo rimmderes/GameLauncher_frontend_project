@@ -2,17 +2,33 @@ import React from "react";
 import { useState } from 'react';
 
 
-const SignupModal = ({closeModal}) => {
+const SignupModal = ({closeModal, postAccount}) => {
 
-    const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [email, setEmail] = useState("");
-    const [dob, setDob] = useState("");
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const [stateUser, setStateUser] = useState(
+        {
+            name: "",
+            password: "",
+            dateOfBirth: "01/01/1992",
+            email: ""
+
+        }
+    )
+
+    const handleChange = (event) => {
+        let propertyName = event.target.name; 
+        let copiedUser = {...stateUser}
+        copiedUser[propertyName] = event.target.value;
+        setStateUser(copiedUser);
     }
+    
+        const handleSubmit = (event) => {
+        event.preventDefault()
+        postAccount(stateUser)
+        closeModal(false)
+    }
+
+
 
     return ( 
         <div className="modalBackground"> 
@@ -28,37 +44,43 @@ const SignupModal = ({closeModal}) => {
                     <label className="signup_label" htmlFor="signup_input">Username:</label>
                     <input
                         type="text"
-                        placeholder="Type username here..." className="signup_input" 
-                        value={userName}
-                        onChange={event => setUserName(event.target.value)} />
+                        placeholder="Type username here..." 
+                        name= "name" 
+                        value={stateUser.name}
+                        onChange={handleChange} />
 
                     <label className="signup_label" htmlFor="signup_input">Email:</label>
                     <input 
                         type="text"
-                        placeholder="Type username here..." className="signup_input" 
-                        value={email}
-                        onChange={event => setEmail(event.target.value)} />
+                        placeholder="Type email here..." 
+                        // className="signup_input" 
+                        name="email"
+                        value={stateUser.email}
+                        onChange={handleChange} />
 
                     <label className="signup_label" htmlFor="signup_input">Password:</label>
                     <input 
                         type="password" 
-                        placeholder="Type username here..." className="signup_input" 
-                        value={password}
-                        onChange={event => setPassword(event.target.value)} />
+                        placeholder="Type password here..." className="signup_input"
+                        name="password" 
+                        value={stateUser.password}
+                        onChange={handleChange} />
 
-                    <label className="signup_label" htmlFor="signup_input">confirm Password:</label>
+                    {/* <label className="signup_label" htmlFor="signup_input">confirm Password:</label>
                     <input 
                         type="password"
-                        placeholder="Type username here..." className="signup_input" 
+                        placeholder="Confirm password here..." className="signup_input" 
+                        name="confirmPassword"
                         value={confirmPassword}
-                        onChange={event => setConfirmPassword(event.target.value)} />
+                        onChange={event => setConfirmPassword(event.target.value)} /> */}
                     
                     <label className="signup_label" htmlFor="signup_input">Date of Birth:</label>
                     <input 
                         type="date" 
-                        placeholder="Type username here..." className="signup_input" 
-                        value={dob}
-                        onChange={event => setDob(event.target.value)} />
+                        placeholder="Enter DOB here..." className="signup_input" 
+                        name="dateOfBirth"
+                        // value={stateUser.dateOfBirth} 
+                        onChange={handleChange} />
 
                     <input type="submit" value="OK" className="signup_ok"/>
                 </form>
