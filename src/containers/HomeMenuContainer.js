@@ -52,15 +52,16 @@ const HomeMenuContainer = () => {
       }
 
 
-        const postAccount = async (newAccount) => {
-            const response = await fetch("http://localhost:8080/accounts", {
-                method: "POST",
-                headers: {'Content-Type' : 'application/json'},
-                body: JSON.stringify(newAccount)
-            }) 
-            const savedAccount = await response.json();
-            setAccount(savedAccount)
-            };
+    const postAccount = async (newAccount) => {
+        const response = await fetch("http://localhost:8080/accounts", {
+            method: "POST",
+            headers: {'Content-Type' : 'application/json'},
+            body: JSON.stringify(newAccount)
+        }) 
+        const savedAccount = await response.json();
+        setAccount(savedAccount)
+    };
+
         
     
 
@@ -84,7 +85,7 @@ const HomeMenuContainer = () => {
                     </li>
                 </ul>
                 
-                
+                <p id="tempname">{account.name}</p>
                
                 <ul>
                     
