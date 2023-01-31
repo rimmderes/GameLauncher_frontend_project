@@ -185,4 +185,6 @@ button {
 
 #tempname{
   color: white;
+  transform: translateX(1250px);
+  
 }

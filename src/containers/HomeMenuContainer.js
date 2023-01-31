@@ -13,11 +13,12 @@ const HomeMenuContainer = () => {
 
     const SERVER_URL = "http://localhost:8080"
 
-    const [account, setAccount] = useState(null);
+    const [account, setAccount] = useState(false);
     const [games, setGames] = useState([]);
     const [filteredGames, setfilteredGames] = useState();
     const [loginModal, setLoginModal] = useState(false);
     const [signupModal, setSignupModal] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
 
     useEffect(() => {
@@ -59,8 +60,28 @@ const HomeMenuContainer = () => {
             body: JSON.stringify(newAccount)
         }) 
         const savedAccount = await response.json();
-        setAccount(savedAccount)
+        setAccount(savedAccount);
+        setIsLoggedIn(true)
     };
+
+    // const displayName = (element) => {
+    //     if(account != false) {
+    //         return element;
+    //     }
+    // }
+
+    const ifLoggedIn = (element) => {
+        if(isLoggedIn === true) {
+            return element
+        }
+       
+    }
+
+    const ifLoggedOff = (element) => {
+        if(isLoggedIn === false) {
+            return element
+        }
+    }
 
         
     
@@ -70,8 +91,11 @@ const HomeMenuContainer = () => {
         <BrowserRouter>
             <div>
                 <div className="banner">
+
                 
                 <div className="navbar">
+
+
                     {/* <img src={logo} alt="logo" width={100}/>  */}
 
                     
@@ -85,29 +109,37 @@ const HomeMenuContainer = () => {
                     </li>
                 </ul>
                 
-                <p id="tempname">{account.name}</p>
                
                 <ul>
-                    
+                    { ifLoggedOff(
+
                 <li className="loginButton"
                 onClick={() => {
                     setLoginModal(true);
                 }}
-                
-                > Login </li>
+            
+                > Login </li> )}
                 {loginModal && <LoginModal closeModal={setLoginModal}/>}
                  
-                 
+                
+                    {ifLoggedOff(
                  <li className="signupButton"
                  onClick={() => {
                     setSignupModal(true);
                 }}
                 
                     
-                > Sign Up </li>
-                {signupModal && <SignupModal closeModal={setSignupModal} postAccount={postAccount}/>}
+                > Sign Up </li> )}
+                {signupModal && <SignupModal closeModal={setSignupModal} postAccount={postAccount}/>} 
                 </ul>
                 </div>
+                
+
+                <p id="tempname">{ifLoggedIn (account.name)}</p>
+
+
+                { ifLoggedIn( <button > Log Out</button>) }
+
                 
 
                 <div className="content">
