@@ -1,6 +1,16 @@
 import React from "react";
+import { useState } from 'react';
+
 
 const LoginModal = ({closeModal}) => {
+
+    const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
+
     return ( 
         <div className="modalBackground"> 
         <div className="modalContainer">
@@ -10,9 +20,23 @@ const LoginModal = ({closeModal}) => {
             </div>
 
             <div className="loginText">
-                <p>Username:</p>
-                <p>Password:</p>
-                <button>Ok</button>
+                <form className="login" role="search" onSubmit={handleSubmit}>
+                    <label className="login_label" htmlFor="login_input">Username:</label>
+                    <input 
+                        type="text" 
+                        placeholder="Type username here..." className="login_input" 
+                        value={userName}
+                        onChange={event => setUserName(event.target.value)} />
+
+                    <label className="login_label" htmlFor="login_input">Password:</label>
+                    <input 
+                        type="password"
+                        placeholder="Type username here..." className="login_input" 
+                        value={password}
+                        onChange={event => setPassword(event.target.value)} />
+
+                    <input type="submit" value="OK" className="login_ok"/>
+                </form>
                 <p>Don't have an account? Click Here to Sign up.</p>
             </div>
 
