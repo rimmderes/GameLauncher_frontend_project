@@ -7,7 +7,7 @@ const GamesList = ({games}) => {
     
         })
         return ( 
-            <div>
+            <div className="productcard">
             {mappedGames}
             </div>
 

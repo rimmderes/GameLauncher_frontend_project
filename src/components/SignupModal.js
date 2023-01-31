@@ -2,11 +2,11 @@ import React from "react";
 
 const SignupModal = ({closeModal}) => {
     return ( 
-        <div className="signupMBackground"> 
-        <div className="signupMContainer">
+        <div className="modalBackground"> 
+        <div className="modalContainer">
             <button onClick={() => closeModal(false)}> Home </button>
             <div className="title">
-                <h1>Sign Up here</h1>
+                <h3>Sign Up here:</h3>
             </div>
 
             <div className="loginText">

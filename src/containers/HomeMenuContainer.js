@@ -5,6 +5,9 @@ import LoginModal from "../components/LoginModal";
 import SignupModal from "../components/SignupModal";
 import Search from "../components/Search";
 import SpecificGame from "../components/SpecificGame";
+import logo from "./logo.webp"
+
+
 
 const HomeMenuContainer = () => {
 
@@ -53,38 +56,59 @@ const HomeMenuContainer = () => {
     return ( 
         <BrowserRouter>
             <div>
-                <nav>
-                <h1>Negative Infinity</h1>
+                <div className="banner">
+                
+                <div className="navbar">
+                    {/* <img src={logo} alt="logo" width={100}/>  */}
+
+                    
 
                 <ul>
-                    <button>
+                    <li>
                         <Link to="/">Home</Link>
-                    </button>
-                    <button>
+                    </li>
+                    <li>
                         <Link to="/my-games">My Games</Link>
-                    </button>
+                    </li>
                 </ul>
                 
                 
-                <Search filterGames={filterGames}/>
-
-                <button className="loginButton"
+               
+                <ul>
+                    
+                <li className="loginButton"
                 onClick={() => {
                     setLoginModal(true);
                 }}
                 
-                > Login </button>
+                > Login </li>
                 {loginModal && <LoginModal closeModal={setLoginModal}/>}
                  
                  
-                 <button className="signupButton"
+                 <li className="signupButton"
                  onClick={() => {
                     setSignupModal(true);
                 }}
                 
-                > Sign Up </button>
+                    
+                > Sign Up </li>
                 {signupModal && <SignupModal closeModal={setSignupModal}/>}
-                </nav>
+                </ul>
+                </div>
+                
+
+                <div className="content">
+
+                <h1>Negative Infinity</h1>
+                    {/* <h2>Another One Bytes the Frost</h2> */}
+                    </div>
+
+                    <div className="search">
+                    <Search filterGames={filterGames}/>
+                    </div>
+
+                 
+                </div>
 
                 <Routes>
                     <Route path="/" element={
