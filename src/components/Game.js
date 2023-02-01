@@ -5,7 +5,7 @@ const Game = ({game}) => {
 
     return ( 
         <>
-         <section class="products">
+         <section className="products">
             <h1>{game.name}</h1>
             <h3>{`Price: £${game.price}`}</h3>
             <button>

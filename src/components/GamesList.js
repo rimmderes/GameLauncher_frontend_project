@@ -3,7 +3,7 @@ import Game from "./Game";
 const GamesList = ({games}) => {
      
         let mappedGames = games.map((game) => {
-            return <Game key={games.id} game={game} value={games}/>
+            return <Game key={game.id} game={game} value={games}/>
     
         })
         return ( 
