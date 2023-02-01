@@ -57,8 +57,6 @@ body {
 
 }
 
-
-
 button {
   background: red;
   border-radius: 25px;
@@ -77,24 +75,45 @@ button {
 
 }
 
-
-.banner {
+/* .banner {
   width: 100%;
   height: 80vh;
   background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(background2.jpg);
   background-color: cover;
   background-position: center;
   background-attachment: fixed;
+<<<<<<< HEAD
 
+=======
+} */
+
+.banner {
+  width: 100%;
+  height: 80vh;
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(background2.jpg);
+  animation: background-fade-in 2s ease-in-out forwards;
+  -webkit-transition: background-image 2s ease-in-out;
+  transition: background-image 2s ease-in-out;
+>>>>>>> devRadhika
 }
+
+@keyframes background-fade-in {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
 
 .navbar {
   width: 85%;
   margin: auto;
-  padding: 35px 0;
+  padding: 10px 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   font-family: 'Hanalei Fill';font-size: 22px;
 }
 
@@ -103,12 +122,51 @@ button {
   cursor: pointer;
 }
 
-.navbar ul li {
+.navbar ul {
+  display: flex;
   list-style: none;
-  display: inline-block;
-  margin: 0 20px;
-  position: relative;
-} 
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+/* .navbar a {
+  color: #fff;
+  text-decoration: none;
+} */
+
+/* .loginButton, .signupButton {
+  background-color: blue;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+.loginButton, .signupButton {
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.loginButton:hover, .signupButton:hover {
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0px 0px 10px #fff;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
 
 .navbar ul li ::after {
   content :'';
