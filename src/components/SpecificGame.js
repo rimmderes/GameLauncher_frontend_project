@@ -4,7 +4,7 @@ import { useState } from "react";
 import PurchaseModal from './PurchaseModal';
 
 
-const SpecificGame = ({games})=>{
+const SpecificGame = ({games, ifLoggedIn})=>{
 
     const [purchaseModal, setPurchaseModal] = useState(false);
 
@@ -36,7 +36,7 @@ const SpecificGame = ({games})=>{
         <p>Genre: {game.genre}</p>
         <p>Age: {game.ageRating}</p>
         {/* {ifLoggedIn( */}
-        <button className="purchaseModal"
+             <button className="purchaseModal"
                 onClick={() => {
                     setPurchaseModal(true);
                 }}
@@ -46,8 +46,8 @@ const SpecificGame = ({games})=>{
                  
                 
                 
-        {/* <button > Purchase</button> */}
-        {/* )} */}
+         {/* <button > Purchase</button> */}
+        
         <p>Players:</p>
         {currentPlayers}
         </>

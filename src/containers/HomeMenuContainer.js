@@ -141,7 +141,7 @@ const HomeMenuContainer = () => {
                             {signupModal && <SignupModal closeModal={setSignupModal} postAccount={postAccount}/>} 
 
                             <p id="tempname">{ifLoggedIn (account.name)}</p>
-                            
+
                             {ifLoggedIn(
                             <li onClick={() => setIsLoggedIn(false)}> Log Out</li>
                             )}
@@ -171,7 +171,7 @@ const HomeMenuContainer = () => {
                     />
                     <Route path="/games/:id" element={
                         <SpecificGame
-                            games={games} 
+                            games={games} ifLoggedIn={ifLoggedIn}
                         />}
                     />
                     <Route path="/my-games" element={

@@ -1,3 +1,12 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -7,33 +16,17 @@ body {
 }
 
 
-.products {
-  width: 80%;
-  position: relative;
-  text-align: center;
-}
 
-
-.products {
-  display: flex;
-  flex-wrap: 10px;
-  /* width: 100%; */
-  /* justify-content: space-evenly; */
-  align-items: center;
-  margin: 50px 0;
-  gap: 10px
-}
 
 .products:hover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.22);
-  transform: translate(0px, -8px);
+  /* transform: translate(0px, -8px); */
 }
 
 .products {
   width: 20%;
   margin: 15px;
   box-sizing: border-box;
-  float: left;
   text-align: center;
   border-radius: 20px;
   cursor: pointer;
@@ -54,7 +47,9 @@ body {
   margin-left: 5cm;
   margin-right: 5cm;
   justify-content: space-evenly;
-
+  display: flex;
+  flex-wrap: wrap ;
+  z-index: 0;
 }
 
 button {
@@ -82,9 +77,6 @@ button {
   background-color: cover;
   background-position: center;
   background-attachment: fixed;
-<<<<<<< HEAD
-
-=======
 } */
 
 .banner {
@@ -94,7 +86,6 @@ button {
   animation: background-fade-in 2s ease-in-out forwards;
   -webkit-transition: background-image 2s ease-in-out;
   transition: background-image 2s ease-in-out;
->>>>>>> devRadhika
 }
 
 @keyframes background-fade-in {
@@ -161,13 +152,6 @@ button {
   box-shadow: 0px 0px 10px #fff;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-}
-
 .navbar ul li ::after {
   content :'';
   height: 3px;
@@ -185,11 +169,14 @@ button {
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
   width : 100%;
-  position: absolute;
+  /* position: absolute; */
   font-family: 'Hanalei Fill';font-size: 22px;
   top: 50%;
-  transform: translateY(-100%);
   text-align: center;
   color: aliceblue;
   font-size: 40px;
@@ -201,8 +188,6 @@ button {
 
 .search {
     width: 100%;
-    position:relative;
-    transform: translateY(1000%);
     text-align: center;
     display: inline-flexbox;
   font-family: 'Hanalei Fill';
@@ -212,7 +197,7 @@ button {
 /* MODAL */
 
 /* .modalBackground {
-  width: 100Vw;
+  width: 100vw;
   height: 100vh;
   background-color: rgba(200, 200, 200);
   position: relative;
@@ -235,7 +220,27 @@ button {
   color: black;
   position: fixed;
   transform: translateX(-750px);
-  z-index: 1;
+  z-index: 1000;
+}
+.purchaseModalContainer{
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.purchaseModalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(200, 200, 200);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalContainer .title {
