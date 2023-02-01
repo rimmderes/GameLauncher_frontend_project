@@ -118,7 +118,7 @@ const HomeMenuContainer = () => {
                                 <Link to="/">Home</Link>
                             </li>
                             {ifLoggedIn(
-                            <li>
+                            <li className="myGamesButton">
                                 <Link to="/my-games">My Games</Link>
                             </li>
                             )}
