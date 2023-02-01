@@ -112,7 +112,7 @@ const HomeMenuContainer = () => {
                         {/* <img src={logo} alt="logo" width={100}/>  */}
 
                         <ul>
-                            <li>
+                            <li className="homeButton">
                                 <Link to="/">Home</Link>
                             </li>
                             {ifLoggedIn(
