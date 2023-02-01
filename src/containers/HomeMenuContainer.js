@@ -75,16 +75,15 @@ const HomeMenuContainer = () => {
     };
 
     const logInToAnAccount = async (accountName, accountPassword) => {
+        let check = false;
         for(const accountInList of allAccounts){
             if((accountInList.name===accountName)&(accountInList.password===accountPassword)){
                 setAccount(accountInList);
                 setIsLoggedIn(true)
-                return true;
-            }
-            else{
-                return false;
+                check= true;
             }
         }
+        return check;
     };
 
     // const displayName = (element) => {
@@ -187,8 +186,12 @@ const HomeMenuContainer = () => {
                     />
                     <Route path="/games/:id" element={
                         <SpecificGame
-                            games={games}
+                            games={games} 
                         />}
+                    />
+                    <Route path="/my-games" element={
+                        <GamesList games={account.installGames}/>
+                    }
                     />
                 </Routes>
 
