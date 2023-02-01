@@ -4,8 +4,6 @@ import { useState } from 'react';
 
 const PurchaseModal = ({closeModal}) => {
 
-    const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
 
@@ -17,12 +15,6 @@ const PurchaseModal = ({closeModal}) => {
 
     return ( 
         
-        // <div className="purchaseModalBackground">
-        // <div className="purchaseModalContainer">
-        //     <p>Hello</p>
-        // </div>
-        // </div>
-
         <div className="modalBackground"> 
         <div className="modalContainer purchaseModalContainer">
             <button onClick={() => closeModal(false)}> Purchase </button>

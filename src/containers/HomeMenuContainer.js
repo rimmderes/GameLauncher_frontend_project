@@ -101,6 +101,16 @@ const HomeMenuContainer = () => {
         }
     }
 
+    const doTheyOwnGame =(gameID) =>{
+        let check = false;
+        for(const ownedGame of account.installGames){
+            if((ownedGame.id===gameID)){
+                check= true;
+            }
+        }
+        return check;
+    }
+
 
     return ( 
         <BrowserRouter>
@@ -171,7 +181,7 @@ const HomeMenuContainer = () => {
                     />
                     <Route path="/games/:id" element={
                         <SpecificGame
-                            games={games} ifLoggedIn={ifLoggedIn}
+                            games={games} ifLoggedIn={ifLoggedIn} isLoggedIn={isLoggedIn} doTheyOwnGame={doTheyOwnGame}
                         />}
                     />
                     <Route path="/my-games" element={

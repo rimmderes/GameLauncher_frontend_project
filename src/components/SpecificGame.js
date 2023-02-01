@@ -4,9 +4,11 @@ import { useState } from "react";
 import PurchaseModal from './PurchaseModal';
 
 
-const SpecificGame = ({games, ifLoggedIn})=>{
+const SpecificGame = ({games, ifLoggedIn, isLoggedIn, doTheyOwnGame, })=>{
 
     const [purchaseModal, setPurchaseModal] = useState(false);
+    const [ownGame, setOwnGame] = useState(false);
+
 
 
     const {id} = useParams();
@@ -16,12 +18,26 @@ const SpecificGame = ({games, ifLoggedIn})=>{
     });   
 
 
-    // const ifLoggedIn = async (element) => {
-    //     if(isLoggedIn === true) {
-    //         return element
-    //     }
-       
-    // }
+    const ifOwnedGame =(element)=>{
+        if(isLoggedIn){
+            console.log("logged in")
+            if(ownGame===false){
+                console.log("dont own game")
+                return element;
+            }
+        }
+        
+    }
+
+    const displayButtons =(element)=>{
+        if(isLoggedIn){
+            if(doTheyOwnGame(game.id)){
+                setOwnGame(true);
+                return element;
+            }
+        }
+        
+    }
 
     let currentPlayers = game.players.map((player) => {
         return <p key={player.id}>{player.name}</p>
@@ -35,18 +51,20 @@ const SpecificGame = ({games, ifLoggedIn})=>{
         <p>Publisher: {game.publisher}</p>
         <p>Genre: {game.genre}</p>
         <p>Age: {game.ageRating}</p>
-        {/* {ifLoggedIn( */}
+        {ifOwnedGame(
              <button className="purchaseModal"
                 onClick={() => {
                     setPurchaseModal(true);
                 }}
             
         > Purchase </button>
+        )}
         {purchaseModal && <PurchaseModal closeModal={setPurchaseModal}/>}
                  
+        {displayButtons(
+            <button > Play</button>
+        )} 
                 
-                
-         {/* <button > Purchase</button> */}
         
         <p>Players:</p>
         {currentPlayers}
