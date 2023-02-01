@@ -2,13 +2,16 @@ import React from "react";
 import { useState } from 'react';
 
 
-const LoginModal = ({closeModal}) => {
+const LoginModal = ({closeModal, logInToAnAccount}) => {
 
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        logInToAnAccount(userName,password);
+        closeModal(false)
+
     }
 
     return ( 

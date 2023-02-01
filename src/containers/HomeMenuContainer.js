@@ -14,6 +14,7 @@ const HomeMenuContainer = () => {
     const SERVER_URL = "http://localhost:8080"
 
     const [account, setAccount] = useState(false);
+    const [allAccounts, setAllAccounts] = useState([])
     const [games, setGames] = useState([]);
     const [filteredGames, setfilteredGames] = useState();
     const [loginModal, setLoginModal] = useState(false);
@@ -26,6 +27,15 @@ const HomeMenuContainer = () => {
             const response = await fetch(`${SERVER_URL}/games`)
             const data = await response.json();
             setGames(data);
+        }
+        fetchData()
+    }, [])
+
+    useEffect(() => {
+        const fetchData = async() => {
+            const response = await fetch(`${SERVER_URL}/accounts`)
+            const data = await response.json();
+            setAllAccounts(data);
         }
         fetchData()
     }, [])
@@ -62,6 +72,15 @@ const HomeMenuContainer = () => {
         const savedAccount = await response.json();
         setAccount(savedAccount);
         setIsLoggedIn(true)
+    };
+
+    const logInToAnAccount = async (accountName, accountPassword) => {
+        for(const accountInList of allAccounts){
+            if((accountInList.name===accountName)&(accountInList.password===accountPassword)){
+                setAccount(accountInList);
+                setIsLoggedIn(true)
+            }
+        }
     };
 
     // const displayName = (element) => {
@@ -119,7 +138,7 @@ const HomeMenuContainer = () => {
                 }}
             
                 > Login </li> )}
-                {loginModal && <LoginModal closeModal={setLoginModal}/>}
+                {loginModal && <LoginModal closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>}
                  
                 
                     {ifLoggedOff(
