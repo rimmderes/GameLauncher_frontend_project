@@ -6,12 +6,19 @@ const LoginModal = ({closeModal, logInToAnAccount}) => {
 
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
-    const handleSubmit = (event) => {
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        logInToAnAccount(userName,password);
+        const result = await logInToAnAccount(userName,password)
+        if(result != true){
+            setError("Incorrect combination of details")
+        }
+        else{
+        setError("")
         closeModal(false)
-
+        }
     }
 
     return ( 
@@ -20,6 +27,7 @@ const LoginModal = ({closeModal, logInToAnAccount}) => {
             <button onClick={() => closeModal(false)}> Home </button>
             <div className="title">
                 <h3>Log in here</h3>
+                <p>{error}</p>
             </div>
 
             <div className="loginText">

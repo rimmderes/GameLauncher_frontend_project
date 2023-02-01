@@ -175,6 +175,7 @@ button {
   color: black;
   position: fixed;
   transform: translateX(-750px);
+  z-index: 1;
 }
 
 .modalContainer .title {

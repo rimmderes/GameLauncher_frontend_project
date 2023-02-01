@@ -79,6 +79,10 @@ const HomeMenuContainer = () => {
             if((accountInList.name===accountName)&(accountInList.password===accountPassword)){
                 setAccount(accountInList);
                 setIsLoggedIn(true)
+                return true;
+            }
+            else{
+                return false;
             }
         }
     };
@@ -123,9 +127,11 @@ const HomeMenuContainer = () => {
                     <li>
                         <Link to="/">Home</Link>
                     </li>
+                    { ifLoggedIn(
                     <li>
                         <Link to="/my-games">My Games</Link>
                     </li>
+                    )}
                 </ul>
                 
                
@@ -157,7 +163,7 @@ const HomeMenuContainer = () => {
                 <p id="tempname">{ifLoggedIn (account.name)}</p>
 
 
-                { ifLoggedIn( <button > Log Out</button>) }
+                { ifLoggedIn( <button onClick={() => setIsLoggedIn(false)}> Log Out</button>) }
 
                 
 
