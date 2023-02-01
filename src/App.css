@@ -10,9 +10,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(39, 20, 206);
+  background-color: rgb(64, 66, 66);
   color: rgb(255, 255, 255);
-  /* font-family: 'Hanalei Fill';font-size: 22px; */
+  font-family: 'Hanalei Fill';font-size: 16px;
 }
 
 
@@ -20,7 +20,7 @@ body {
 
 .products:hover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.22);
-  /* transform: translate(0px, -8px); */
+  /* transform: translate(0px, -5px); */
 }
 
 .products {
@@ -33,13 +33,14 @@ body {
   padding-top: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0,0,0,0.22);
   transition: .4s;
-  background: rgb(13, 13, 163);
+  background: rgb(114, 114, 124);
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 530px;
   margin-left: auto;
   margin-right: auto;
+  
   
 }
 
@@ -53,10 +54,10 @@ body {
 }
 
 button {
-  background: red;
+  background: rgb(0, 0, 0);
   border-radius: 25px;
   font-weight: bold;
-  border: 2px solid rgb(250, 11, 11);
+  border: 2px solid rgb(0,0,0);
   color: white;
   cursor: pointer;
   position:relative;
@@ -80,27 +81,34 @@ button {
 } */
 
 .content {
-  background: url(http://i.giphy.com/fsULJFFGv8X3G.gif);
+  background: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif);
   background-size: cover;
-  background-position: center;
+  background-position: auto;
   
   -webkit-background-clip: text;
   color: transparent; 
   
-  width: 300px;
-  height: 100px;
+  width: 600px;
+  height: 300px;
   box-sizing: border-box;
-  font-size: 58px;
+  font-size: 70px;
   font-weight: bold;
   text-align: center;
   line-height: 100px;
-  flex-shrink: 0;
+  text-align: center;
+  /* text-shadow: 
+        0 0 90px black,
+        0 0 100px black,
+        0 0 150px white; */
+  transform: translateX(675px);
+  font-family: 'Hanalei Fill';
+  
 }
 
 .banner {
   width: 100%;
-  height: 80vh;
-  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(background2.jpg);
+  height: 70vh;
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(background2.jpg) ;
   animation: background-fade-in 2s ease-in-out forwards;
   -webkit-transition: background-image 2s ease-in-out;
   transition: background-image 2s ease-in-out;
@@ -140,11 +148,6 @@ button {
   margin-right: 20px;
 }
 
-/* .navbar a {
-  color: #fff;
-  text-decoration: none;
-} */
-
 /* .loginButton, .signupButton {
   background-color: blue;
   color: white;
@@ -153,7 +156,7 @@ button {
   cursor: pointer;
 } */
 
-.loginButton, .signupButton {
+.loginButton, .signupButton, .okButton {
   padding: 10px 20px;
   border: 1px solid #fff;
   border-radius: 25px;
@@ -164,8 +167,9 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-.loginButton:hover, .signupButton:hover {
+.loginButton:hover, .signupButton:hover, .okButton {
   background-color: #fff;
+  /* background-image: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif); */
   color: #333;
   box-shadow: 0px 0px 10px #fff;
 }
@@ -209,7 +213,7 @@ button {
     text-align: center;
     display: inline-flexbox;
   font-family: 'Hanalei Fill';
-
+  padding: 20px;
 }
 
 /* MODAL */
@@ -265,9 +269,15 @@ button {
 }
 
 .modalContainer .title {
-  display: inline-block;
   text-align: center;
-  margin-top: 10px;
+  font-size: 40px;
+
+}
+
+.modalContainer .loginText {
+  text-align: center;
+  
+
 }
 
 #tempname{
@@ -284,9 +294,59 @@ button {
   padding: 10px 20px;
   transition: all 0.3s ease-in-out;
 }
+/* .myGamesButton {
+  text-decoration: none;
+  border: 0px solid #fff;
+  border-radius: 25px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+} */
 
-.homeButton:hover{
+.homeButton:hover {
   background-color: #fff;
   color: #333;
   box-shadow: 0px 0px 10px #fff;
 }
+/* .myGamesButton:hover {
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0px 0px 10px #fff;
+} */
+
+.searchTitle {
+  text-align: center;
+  font-size: 75px;
+  font-family: 'Hanalei Fill';
+  padding: 10px;
+
+}
+
+.close {
+  
+  cursor:pointer;
+}
+ 
+  
+.close:hover {
+ 		
+    opacity: 0.3;
+  }
+
+.okButton {
+  font-family: 'Hanalei Fill';
+  padding: 20px 20px;
+  /* border: 2px solid rgb(58, 57, 57); */
+  border-radius: px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.okButton:hover {
+  background-color: rgb(40, 3, 3);
+  color: rgb(131, 119, 119);
+  box-shadow: 0px 0px 10px #fff;
+}
+

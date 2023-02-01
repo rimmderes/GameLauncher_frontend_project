@@ -101,15 +101,7 @@ const HomeMenuContainer = () => {
         }
     }
 
-    const doTheyOwnGame =(gameID) =>{
-        let check = false;
-        for(const ownedGame of account.installGames){
-            if((ownedGame.id===gameID)){
-                check= true;
-            }
-        }
-        return check;
-    }
+   
 
 
     return ( 
@@ -165,13 +157,9 @@ const HomeMenuContainer = () => {
                     <div className="content">
 
                         <h1>Negative Infinity</h1>
-                        {/* <h2>Another One Bytes the Frost</h2> */}
                     </div>
 
-                    {/* <div className="search">
-                        <Search filterGames={filterGames}/>
-                    </div>
-                  */}
+                    
                 </div>
 
                 <Routes>
@@ -181,7 +169,7 @@ const HomeMenuContainer = () => {
                     />
                     <Route path="/games/:id" element={
                         <SpecificGame
-                            games={games} ifLoggedIn={ifLoggedIn} isLoggedIn={isLoggedIn} doTheyOwnGame={doTheyOwnGame}
+                            games={games} ifLoggedIn={ifLoggedIn} isLoggedIn={isLoggedIn} account={account}
                         />}
                     />
                     <Route path="/my-games" element={

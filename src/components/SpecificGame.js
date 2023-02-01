@@ -1,10 +1,10 @@
 import {useParams } from 'react-router-dom';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import PurchaseModal from './PurchaseModal';
 
 
-const SpecificGame = ({games, ifLoggedIn, isLoggedIn, doTheyOwnGame, })=>{
+const SpecificGame = ({games, ifLoggedIn, isLoggedIn, account })=>{
 
     const [purchaseModal, setPurchaseModal] = useState(false);
     const [ownGame, setOwnGame] = useState(false);
@@ -18,6 +18,27 @@ const SpecificGame = ({games, ifLoggedIn, isLoggedIn, doTheyOwnGame, })=>{
     });   
 
 
+
+    useEffect(() => {
+        if(isLoggedIn) {
+            console.log("heyyy");
+            const gameOwned = doTheyOwnGame(id) 
+            setOwnGame(gameOwned);
+            }
+            
+    }) 
+
+
+    const doTheyOwnGame =(gameID) =>{
+        let check = false;
+        for(const ownedGame of account.installGames){
+            if((ownedGame.id==gameID)){
+                check= true;
+            }
+        }
+        return check;
+    }
+
     const ifOwnedGame =(element)=>{
         if(isLoggedIn){
             console.log("logged in")
@@ -30,11 +51,11 @@ const SpecificGame = ({games, ifLoggedIn, isLoggedIn, doTheyOwnGame, })=>{
     }
 
     const displayButtons =(element)=>{
-        if(isLoggedIn){
-            if(doTheyOwnGame(game.id)){
-                setOwnGame(true);
+        if(isLoggedIn && ownGame){
+            // if(doTheyOwnGame(game.id)){
+            //     setOwnGame(true);
                 return element;
-            }
+            // }
         }
         
     }
@@ -51,14 +72,22 @@ const SpecificGame = ({games, ifLoggedIn, isLoggedIn, doTheyOwnGame, })=>{
         <p>Publisher: {game.publisher}</p>
         <p>Genre: {game.genre}</p>
         <p>Age: {game.ageRating}</p>
-        {ifOwnedGame(
+        {/* {ifOwnedGame(
              <button className="purchaseModal"
                 onClick={() => {
                     setPurchaseModal(true);
                 }}
             
         > Purchase </button>
-        )}
+        )} */}
+
+        {isLoggedIn && !ownGame && <button className="purchaseModal"
+                onClick={() => {
+                    setPurchaseModal(true);
+                }}
+            
+        > Purchase </button>}
+
         {purchaseModal && <PurchaseModal closeModal={setPurchaseModal}/>}
                  
         {displayButtons(

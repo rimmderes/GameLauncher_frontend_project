@@ -17,7 +17,9 @@ const Search = ({ filterGames }) => {
 
   
     return (
-        
+        <>
+        <div className='searchTitle'>Our Games</div>
+        <hr/>
         <form className="search" role="search" onSubmit={handleSubmit}>
             <label className="search__label" htmlFor="search__input">Game:</label>
             <input 
@@ -56,7 +58,7 @@ const Search = ({ filterGames }) => {
 
             <input type="submit" value="Search" className="search__submit"/>
         </form>
-
+        </>
     )
   }
   

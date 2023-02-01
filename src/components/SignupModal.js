@@ -59,51 +59,57 @@ const SignupModal = ({closeModal, postAccount}) => {
     return ( 
         <div className="modalBackground"> 
         <div className="modalContainer">
-            <button onClick={() => closeModal(false)}> Home </button>
+        <span onClick={() => closeModal(false)} class="close">&times;  </span>
             <div className="title">
                 <h3>Sign Up here:</h3>
             </div>
+            <ul>
 
             <div className="loginText">
                 <form className="signup" role="search" onSubmit={handleSubmit}>
 
-                    <label className="signup_label" htmlFor="signup_input">Username:</label>
+                    <li className="signup_label" htmlFor="signup_input">Username:
                     <input
                         type="text"
                         placeholder="Type username here..." 
                         name= "name" 
                         value={stateUser.name}
                         onChange={handleChange} />
+                        </li>
 
-                    <label className="signup_label" htmlFor="signup_input">Email:</label>
+                    <li className="signup_label" htmlFor="signup_input">Email:
                     <input 
                         type="text"
                         placeholder="Type email here..." className="signup_input" 
                         name="email"
                         value={stateUser.email}
                         onChange={handleChange} />
+                        </li>
 
-                    <label className="signup_label" htmlFor="signup_input">Password:</label>
+                    <li className="signup_label" htmlFor="signup_input">Password:
                     <input 
                         type="password" 
                         placeholder="Type password here..." className="signup_input"
                         name="password" 
                         value={stateUser.password}
                         onChange={handleChange} />
+                        </li>
 
-                    <label className="signup_label" htmlFor="signup_input">Date of Birth:</label>
+                    <li className="signup_label" htmlFor="signup_input">Date of Birth:
                     <input 
                         type="date" 
                         placeholder="Enter DOB here..." className="signup_input" 
                         name="dateOfBirth"
                         value={stateUser.dateOfBirth} 
                         onChange={handleChangeDate} />
+                        </li>
 
-                    <input type="submit" value="OK" className="signup_ok"/>
+                    
                 </form>
+                <input type="submit" value="OK" className="okButton"/>
             </div>
 
-
+            </ul>
         </div>
         </div>
 
