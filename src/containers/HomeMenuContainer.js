@@ -5,6 +5,7 @@ import LoginModal from "../components/LoginModal";
 import SignupModal from "../components/SignupModal";
 import Search from "../components/Search";
 import SpecificGame from "../components/SpecificGame";
+import HomeGameContainer from "./HomeGameContainer";
 import logo from "./logo.webp"
 
 
@@ -20,6 +21,7 @@ const HomeMenuContainer = () => {
     const [loginModal, setLoginModal] = useState(false);
     const [signupModal, setSignupModal] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const [hideElement, setHideElement] = useState(false)
 
 
     useEffect(() => {
@@ -86,12 +88,6 @@ const HomeMenuContainer = () => {
         return check;
     };
 
-    // const displayName = (element) => {
-    //     if(account != false) {
-    //         return element;
-    //     }
-    // }
-
     const ifLoggedIn = (element) => {
         if(isLoggedIn === true) {
             return element
@@ -105,83 +101,72 @@ const HomeMenuContainer = () => {
         }
     }
 
-        
-    
-
 
     return ( 
         <BrowserRouter>
             <div>
                 <div className="banner">
 
+                    <div className="navbar">
+
+                        {/* <img src={logo} alt="logo" width={100}/>  */}
+
+                        <ul>
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            {ifLoggedIn(
+                            <li>
+                                <Link to="/my-games">My Games</Link>
+                            </li>
+                            )}
+                        </ul>
+                    
+                        <ul>
+
+                            {ifLoggedOff(
+                            <li className="loginButton"
+                                onClick={() => {setLoginModal(true)}}
+                                > Login </li> 
+                            )}
+
+                            {loginModal && <LoginModal closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>}
+                        
+                            {ifLoggedOff(
+                            <li className="signupButton" 
+                                onClick={() => {setSignupModal(true)}}
+                                > Sign Up </li> 
+                            )}
+
+                            {signupModal && <SignupModal closeModal={setSignupModal} postAccount={postAccount}/>} 
+
+                            <p id="tempname">{ifLoggedIn (account.name)}</p>
+                            
+                            {ifLoggedIn(
+                            <li onClick={() => setIsLoggedIn(false)}> Log Out</li>
+                            )}
+                        </ul>
+                    </div>
                 
-                <div className="navbar">
-
-
-                    {/* <img src={logo} alt="logo" width={100}/>  */}
+                    
 
                     
 
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    { ifLoggedIn(
-                    <li>
-                        <Link to="/my-games">My Games</Link>
-                    </li>
-                    )}
-                </ul>
-                
-               
-                <ul>
-                    { ifLoggedOff(
+                    <div className="content">
 
-                <li className="loginButton"
-                onClick={() => {
-                    setLoginModal(true);
-                }}
-            
-                > Login </li> )}
-                {loginModal && <LoginModal closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>}
-                 
-                
-                    {ifLoggedOff(
-                 <li className="signupButton"
-                 onClick={() => {
-                    setSignupModal(true);
-                }}
-                
-                    
-                > Sign Up </li> )}
-                {signupModal && <SignupModal closeModal={setSignupModal} postAccount={postAccount}/>} 
-                </ul>
-                </div>
-                
-
-                <p id="tempname">{ifLoggedIn (account.name)}</p>
-
-
-                { ifLoggedIn( <button onClick={() => setIsLoggedIn(false)}> Log Out</button>) }
-
-                
-
-                <div className="content">
-
-                <h1>Negative Infinity</h1>
-                    {/* <h2>Another One Bytes the Frost</h2> */}
+                        <h1>Negative Infinity</h1>
+                        {/* <h2>Another One Bytes the Frost</h2> */}
                     </div>
 
-                    <div className="search">
-                    <Search filterGames={filterGames}/>
+                    {/* <div className="search">
+                        <Search filterGames={filterGames}/>
                     </div>
-
-                 
+                  */}
                 </div>
 
                 <Routes>
                     <Route path="/" element={
-                        <GamesList games={filteredGames ? filteredGames : games}/>
+                        <HomeGameContainer filterGames={filterGames} games={filteredGames ? filteredGames : games}/>
                     }
                     />
                     <Route path="/games/:id" element={
@@ -195,10 +180,9 @@ const HomeMenuContainer = () => {
                     />
                 </Routes>
 
-                
             </div>
         </BrowserRouter>
-     );
+    );
 }
  
 export default HomeMenuContainer;

@@ -48,7 +48,7 @@ const SpecificGame = ({games})=>{
                 
         {/* <button > Purchase</button> */}
         {/* )} */}
-        <p>users:</p>
+        <p>Players:</p>
         {currentPlayers}
         </>
         
