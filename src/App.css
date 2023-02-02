@@ -184,6 +184,7 @@ button {
   margin-left: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  height: 31px;
 }
 
 .loginButton:hover, .signupButton:hover, .okButton .homeButton:hover {
@@ -311,6 +312,7 @@ button {
 .close {
   
   cursor:pointer;
+  text-align: left;
 }
  
   
@@ -601,6 +603,15 @@ footer {
   padding-top: 80px;
 }
 
+.purchaseButton{
+  margin-right: auto;
+  margin-left: auto;
+}
 
+.settingpadding{
+  margin-bottom: 100px;
+}
 
-
+.logoutButton, .settingsButton{
+  margin-top: 10px;
+}
