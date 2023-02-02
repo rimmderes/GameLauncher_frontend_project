@@ -9,6 +9,7 @@ import HomeGameContainer from "./HomeGameContainer";
 import Settings from "../components/Settings";
 import logo from "./logo.webp"
 import Footer from "../components/Footer";
+import MyGamesContainer from "./MyGamesContainer";
 
 
 
@@ -168,7 +169,7 @@ const HomeMenuContainer = () => {
                             <Link className="linkbutton" to="/">Home</Link>
                         </li>
                         {ifLoggedIn(
-                        <li className="myGamesButton">
+                        <li className="homeButton">
                             <Link className="linkbutton" to="/my-games">My Games</Link>
                         </li>
                         )}
@@ -198,13 +199,13 @@ const HomeMenuContainer = () => {
                             
 
                         {ifLoggedIn(
-                        <li className="loginButton" onClick={() => setIsLoggedIn(false)}><Link className="linkbutton" to="/">Log Out</Link></li>
+                        <li className="homeButton logoutButton" onClick={() => setIsLoggedIn(false)}><Link className="linkbutton" to="/">Log Out</Link></li>
                         
                         
                         )}
 
                         {ifLoggedIn(
-                        <li className="loginButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
+                        <li className="homeButton settingsButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
                         )}
                     </ul>
                 </div>
@@ -232,7 +233,7 @@ const HomeMenuContainer = () => {
                         />}
                     />
                     <Route path="/my-games" element={
-                        <GamesList games={account.installGames}/>
+                        <MyGamesContainer games={account.installGames}/>
                     }
                     />
 

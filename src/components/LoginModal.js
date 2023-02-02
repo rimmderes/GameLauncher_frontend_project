@@ -55,7 +55,7 @@ const LoginModal = ({closeModal, logInToAnAccount}) => {
                
             </div>
             </ul>
-            <p>Don't have an account? Click Here to Sign up.</p>
+            {/* <p>Don't have an account? Click Here to Sign up.</p> */}
 
         </div>
         </div>
