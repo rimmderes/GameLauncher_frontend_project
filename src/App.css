@@ -377,10 +377,10 @@ button {
 		font-size: 1.5em;
 } 
 
-.page .banner {
+/* .page .banner {
 	display: none;
   visibility: hidden;
-}
+} */
 
 .photo-main {
 	border-radius: 6px 6px 0 0;

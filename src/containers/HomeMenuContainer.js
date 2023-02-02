@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { useEffect, useState, useLayoutEffect } from "react";
+import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import GamesList from "../components/GamesList";
 import LoginModal from "../components/LoginModal";
 import SignupModal from "../components/SignupModal";
@@ -10,6 +10,15 @@ import Settings from "../components/Settings";
 import logo from "./logo.webp"
 import Footer from "../components/Footer";
 
+
+const Wrapper = ({children}) => {
+    const location = useLocation();
+    useLayoutEffect(() => {
+      document.documentElement.scrollTo(0, 0);
+    }, [location.pathname]);
+    return children
+  } 
+  
 
 
 
@@ -146,17 +155,16 @@ const HomeMenuContainer = () => {
             return element
         }
     }
+
    
 
 
     return ( 
-        <BrowserRouter>
-            <div>
 
-            <div className="banner">
-                
-                
-                                    
+    
+        <BrowserRouter>
+        <Wrapper>
+            <div>
 
             {/* <img src="logo.webp" /> */}
 
@@ -208,18 +216,7 @@ const HomeMenuContainer = () => {
                         )}
                     </ul>
                 </div>
-                <div className="content">
-
-                <h1>Negative Infinity</h1>
-                </div>
-
-                
-                </div>
-                    
-
-                    
-                    
-                
+               
 
                 <Routes>
                     <Route path="/" element={
@@ -245,7 +242,9 @@ const HomeMenuContainer = () => {
                 <Footer />
 
             </div>
+            </Wrapper>
         </BrowserRouter>
+        
     );
 }
  

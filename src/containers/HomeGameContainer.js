@@ -6,6 +6,15 @@ const HomeGameContainer = ({games, filterGames}) => {
 
     return ( 
         <div>
+             
+             <div className="banner">
+                <div className="content">
+
+                <h1>Negative Infinity</h1>
+                </div>
+
+                
+                </div>
             <section>
                 <Search filterGames={filterGames}></Search>
             </section>
