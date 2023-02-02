@@ -93,14 +93,14 @@ button {
   box-sizing: border-box;
   font-size: 70px;
   font-weight: bold;
-  text-align: center;
+  /* text-align: center; */
   line-height: 100px;
   text-align: center;
   /* text-shadow: 
         0 0 90px black,
         0 0 100px black,
         0 0 150px white; */
-  transform: translateX(675px);
+  transform: translate(400px);
   font-family: 'Hanalei Fill';
   
 }
@@ -112,6 +112,9 @@ button {
   animation: background-fade-in 2s ease-in-out forwards;
   -webkit-transition: background-image 2s ease-in-out;
   transition: background-image 2s ease-in-out;
+  /* padding-top: -50%; */
+  
+
 }
 
 @keyframes background-fade-in {
@@ -125,13 +128,15 @@ button {
 
 
 .navbar {
-  width: 85%;
+  width: 90%;
   margin: auto;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: 'Hanalei Fill';font-size: 22px;
+  padding-top: -10px;
+  padding-bottom: -10px;
 }
 
 .logo {
@@ -142,11 +147,12 @@ button {
 .navbar ul {
   display: flex;
   list-style: none;
+  padding-bottom: -10px;
 }
 
-.navbar li {
-  margin-right: 20px;
-}
+/* .navbar li { */
+  /* margin-right: 20px; */
+/* } */
 
 /* .loginButton, .signupButton {
   background-color: blue;
@@ -181,7 +187,7 @@ button {
   background: red;
   position: absolute;
   left: 0;
-  bottom: -10px;
+  /* bottom: -10px; */
   transition: 0.5s;
 }
 
@@ -189,24 +195,6 @@ button {
   width: 100%;
   
 }
-
-/* .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-  width : 100%; */
-  /* position: absolute; */
-  /* font-family: 'Hanalei Fill';font-size: 22px;
-  top: 50%;
-  text-align: center;
-  color: aliceblue;
-  font-size: 40px;
-  text-shadow: 
-        0 0 90px red,
-        0 0 100px red,
-        0 0 150px red
-} */
 
 .search {
     width: 100%;
@@ -217,18 +205,6 @@ button {
 }
 
 /* MODAL */
-
-/* .modalBackground {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(200, 200, 200);
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  text-align: center;
-} */
 
 .modalContainer {
   width: 500px;
@@ -245,14 +221,6 @@ button {
   z-index: 1000;
 }
 .purchaseModalContainer{
-  /* width: 500px;
-  height: 500px;
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  display: flex;
-  flex-direction: column;
-  padding: 25px; */
   transform: none;
   top: 10%; right: 0; left: 0;
   margin: 0 auto;
@@ -350,3 +318,54 @@ button {
   box-shadow: 0px 0px 10px #fff;
 }
 
+.specificGame {
+  
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    margin: auto;
+    padding: 2.5em 0;
+    /* min-width: 600px; */
+    /* background-color: white; */
+    /* border-radius: 5px;  */
+  
+} 
+
+.gameContainer {
+    align-items: center;
+    display: grid;
+    /* grid-template-rows: 1fr 1fr; */
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+    justify-content: center; }
+    /* position: absolute; *
+}
+/* 
+.control { 
+  
+		/* display: flex;  */
+		/* justify-content: space-between; */
+	   /* padding: 0.8em;  */
+		/* color: #fff; */
+ /* }   */
+
+.specificGameName {
+  margin-bottom: 0.1em;
+		font-size: 1.5em;
+} 
+
+.page .banner {
+	display: none;
+  visibility: hidden;
+}
+
+.photo-main {
+	border-radius: 6px 6px 0 0;
+	display: grid;
+	grid-template-rows: 1fr;
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+  float: left;
+}

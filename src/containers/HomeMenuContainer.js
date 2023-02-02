@@ -100,25 +100,29 @@ const HomeMenuContainer = () => {
             return element
         }
     }
-
    
 
 
     return ( 
         <BrowserRouter>
             <div>
-                <div className="banner">
+
+            <div className="banner">
+                
+                
+                                    
+
+                {/* <img src="logo.webp" /> */}
 
                     <div className="navbar">
 
-                        {/* <img src={logo} alt="logo" width={100}/>  */}
 
                         <ul>
                             <li className="homeButton">
                                 <Link to="/">Home</Link>
                             </li>
                             {ifLoggedIn(
-                            <li>
+                            <li className="myGamesButton">
                                 <Link to="/my-games">My Games</Link>
                             </li>
                             )}
@@ -149,18 +153,18 @@ const HomeMenuContainer = () => {
                             )}
                         </ul>
                     </div>
-                
-                    
-
-                    
-
                     <div className="content">
 
-                        <h1>Negative Infinity</h1>
-                    </div>
+<h1>Negative Infinity</h1>
+</div>
 
                     
-                </div>
+                    </div>
+                    
+
+                    
+                    
+                
 
                 <Routes>
                     <Route path="/" element={
