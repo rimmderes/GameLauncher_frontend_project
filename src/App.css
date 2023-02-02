@@ -92,7 +92,9 @@ button {
 } */
 
 .content {
-  background: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif);
+  /* background: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif); */
+  background: url(https://www.fightersgeneration.com/nf7/char/akira-vf5-water-effect.gif);
+  
   background-size: cover;
   background-position: center;
   
@@ -106,11 +108,11 @@ button {
   font-weight: bold;
   /* text-align: center; */
   line-height: 100px;
-  text-align: center;
-  /* text-shadow: 
-        0 0 90px black,
-        0 0 100px black,
-        0 0 150px white; */
+  /* text-align: center;
+  text-shadow: 
+        0 0 10px white,
+        0 0 100px white; */
+        /* 0 0 150px white; */
   transform: translateX(-50%);
   left: 50%;
   position: absolute;
@@ -120,12 +122,16 @@ button {
 .banner {
   width: 100%;
   height: 60vh;
-  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(background2.jpg) ;
+  /* background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(background2.jpg) ; */
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://www.fightersgeneration.com/nf7/char/akira-vf5-water-effect.gif);
 
   animation: background-fade-in 2s ease-in-out forwards;
   -webkit-transition: background-image 2s ease-in-out;
   transition: background-image 2s ease-in-out;
   /* padding-top: -50%; */
+  background-size: cover;
+  background-position: center;
+  
   
 
 }
@@ -183,15 +189,25 @@ button {
   text-decoration: none;
   margin-left: 10px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  height: 31px;
+  transition: all 0.2s ease-in-out;
+  position:relative;
+  overflow: hidden;
+  width: 100px;
+  text-align: center;
+  margin: 20px 10px;
+  margin-top: auto;
+  object-position: center;
 }
-
 .loginButton:hover, .signupButton:hover, .okButton .homeButton:hover {
   background-color: #fff;
-  background-image: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif);
+  /* background-image: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif); */
+  background-image: url(https://www.fightersgeneration.com/nf7/char/akira-vf5-water-effect.gif);
   /* color: #333; */
   box-shadow: 0px 0px 10px #fff;
+  transform: scale(1.1);
+}
+.loginButton:active, .signupButton:active, .okButton .homeButton:active {
+  transform: translateY(3px);
 }
 
 .navbar ul li ::after {
