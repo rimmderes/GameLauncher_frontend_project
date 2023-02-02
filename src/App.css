@@ -87,41 +87,80 @@ button {
   background-attachment: fixed;
 } */
 
-.content {
-  background: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif);
+/* .content { */
+  /* background: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif); */
+  /* background: url(https://i.pinimg.com/originals/c3/ae/8b/c3ae8b679648b7be5101cb3480ea5cfd.gif); */
+ /* background: url(https://i.pinimg.com/originals/5b/ed/00/5bed000df57b090e6f0d91969a80b091.gif); */
+ /* background: url(https://thumbs.gfycat.com/NaughtyMeaslyIndochinahogdeer-max-1mb.gif); 
+  
+
   background-size: cover;
   background-position: center;
   
   -webkit-background-clip: text;
-  color: transparent; 
+  color: transparent;   */
   
-  width: 600px;
-  height: 300px;
-  box-sizing: border-box;
-  font-size: 70px;
+  /* width: 600px; */
+  /* height: 300px; */
+  /* box-sizing: border-box; */
+  /* font-size: 70px;
   font-weight: bold;
-  /* text-align: center; */
   line-height: 100px;
-  text-align: center;
+  text-align: center;  */
   /* text-shadow: 
-        0 0 90px black,
-        0 0 100px black,
-        0 0 150px white; */
-  transform: translateX(-50%);
+        0 0 10px rgb(113, 105, 105),
+        0 0 100px rgb(112, 106, 106), 
+         0 0 150px rgb(163, 156, 156);  */
+  
+/* 
+ transform: translate(-50%, 20%);
   left: 50%;
   position: absolute;
   font-family: 'Hanalei Fill';
+
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+     display:block; 
+
+} */
+
+.h1 {
+  background-color:#fff;
+    overflow:hidden;
+    display:inline-block; 
+    padding:10px; 
+    font-weight:bold;
+    font-family:arial;
+    color:transparent;
+    font-size:200px;
 }
+
+span { 
+  background: url(https://www.fightersgeneration.com/nf7/char/akira-vf5-water-effect.gif
+  ) -20px -20px repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  display:block;
+}
+
+
+
 
 .banner {
   width: 100%;
   height: 60vh;
-  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(background2.jpg) ;
-
+  /* background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(background2.jpg) ; */
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://www.fightersgeneration.com/nf7/char/akira-vf5-water-effect.gif);
+  /* background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://giffiles.alphacoders.com/124/12454.gif); */
   animation: background-fade-in 2s ease-in-out forwards;
   -webkit-transition: background-image 2s ease-in-out;
   transition: background-image 2s ease-in-out;
   /* padding-top: -50%; */
+  background-size: cover;
+  background-position: center;
+
+  
+  
   
 
 }
@@ -193,22 +232,20 @@ button {
   transition: all 0.2s ease-in-out;
   position:relative;
   overflow: hidden;
-  width: 80px;
+  width: 100px;
   text-align: center;
   margin: 20px 10px;
   margin-top: auto;
   object-position: center;
 }
-
-
 .loginButton:hover, .signupButton:hover, .okButton .homeButton:hover {
   background-color: #fff;
-  background-image: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif);
+  /* background-image: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif); */
+  background-image: url(https://i.pinimg.com/originals/c3/ae/8b/c3ae8b679648b7be5101cb3480ea5cfd.gif);
   /* color: #333; */
   box-shadow: 0px 0px 10px #fff;
   transform: scale(1.1);
 }
-
 .loginButton:active, .signupButton:active, .okButton .homeButton:active {
   transform: translateY(3px);
 }
@@ -401,7 +438,7 @@ input[type="submit"]:hover {
 
 .homeButton:hover {
   background-color: #fff;
-  background-image: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif);
+  background-image: url(https://i.pinimg.com/originals/c3/ae/8b/c3ae8b679648b7be5101cb3480ea5cfd.gif);
 
   color: #333;
   box-shadow: 0px 0px 10px #fff;
@@ -418,6 +455,7 @@ input[type="submit"]:hover {
 .close {
   
   cursor:pointer;
+  text-align: left;
 }
  
   
@@ -449,7 +487,7 @@ input[type="submit"]:hover {
     display: grid;
     grid-template-columns: 1fr;
     margin: auto;
-    padding: 2.5em 0;
+    /* padding: 2.5em 0; */
     height: 700px;
     /* min-width: 600px; */
     /* background-color: white; */
@@ -469,24 +507,25 @@ input[type="submit"]:hover {
     box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
     justify-content: center; }
 
-/* 
-.control { 
+
+.controls { 
   
 		/* display: flex;  */
-		/* justify-content: space-between; */
-	   /* padding: 0.8em;  */
-		/* color: #fff; */
- /* }   */
+		justify-content: space-between;
+    margin-right: 100px;
+	   padding: 0.8em; 
+		color: #fff;
+ }  
 
 .specificGameName {
   margin-bottom: 0.1em;
 		font-size: 1.5em;
 } 
 
-.page .banner {
+/* .page .banner {
 	display: none;
   visibility: hidden;
-}
+} */
 
 .photo-main {
 	border-radius: 6px 6px 0 0;
@@ -692,10 +731,30 @@ footer {
 
 }
 
-.signup_label {
-  margin-bottom: 1rem;
-  display: block;
+.logoutButton {
+  color: #27bcda;
 }
 
+.linkbutton:-webkit-any-link {
+  color: white;
+  text-decoration: none;
+}
 
+.specificGameTitle {
+  text-align: center;
+  font-size: 3em;
+  padding-top: 80px;
+}
 
+.purchaseButton{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.settingpadding{
+  margin-bottom: 100px;
+}
+
+.logoutButton, .settingsButton{
+  margin-top: 10px;
+}

@@ -11,7 +11,7 @@ const Game = ({game}) => {
             <h3>{`Price: £${game.price}`}</h3>
 
             <button>
-                    <Link to={`/games/${game.id}`} >More Details</Link>
+                    <Link className="linkbutton" to={`/games/${game.id}`} >More Details</Link>
             </button>
             </section>
         </>

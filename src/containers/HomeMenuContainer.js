@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { useEffect, useState, useLayoutEffect } from "react";
+import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import GamesList from "../components/GamesList";
 import LoginModal from "../components/LoginModal";
 import SignupModal from "../components/SignupModal";
@@ -9,6 +9,17 @@ import HomeGameContainer from "./HomeGameContainer";
 import Settings from "../components/Settings";
 import logo from "./logo.webp"
 import Footer from "../components/Footer";
+import MyGamesContainer from "./MyGamesContainer";
+
+
+const Wrapper = ({children}) => {
+    const location = useLocation();
+    useLayoutEffect(() => {
+      document.documentElement.scrollTo(0, 0);
+    }, [location.pathname]);
+    return children
+  } 
+  
 
 
 
@@ -24,6 +35,8 @@ const HomeMenuContainer = () => {
     const [signupModal, setSignupModal] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [hideElement, setHideElement] = useState(false)
+
+
 
 
     useEffect(() => {
@@ -143,17 +156,16 @@ const HomeMenuContainer = () => {
             return element
         }
     }
+
    
 
 
     return ( 
-        <BrowserRouter>
-            <div>
 
-            <div className="banner">
-                
-                
-                                    
+    
+        <BrowserRouter>
+        <Wrapper>
+            <div>
 
             {/* <img src="logo.webp" /> */}
 
@@ -162,11 +174,11 @@ const HomeMenuContainer = () => {
 
                     <ul>
                         <li className="homeButton">
-                            <Link to="/">Home</Link>
+                            <Link className="linkbutton" to="/">Home</Link>
                         </li>
                         {ifLoggedIn(
-                        <li className="myGamesButton">
-                            <Link to="/my-games">My Games</Link>
+                        <li className="homeButton">
+                            <Link className="linkbutton" to="/my-games">My Games</Link>
                         </li>
                         )}
                     </ul>
@@ -189,29 +201,23 @@ const HomeMenuContainer = () => {
 
                         {signupModal && <SignupModal closeModal={setSignupModal} postAccount={postAccount}/>} 
 
+
                         {ifLoggedIn (<p id="tempname"> 👤 {account.name}</p>
                             )}
+                            
+
                         {ifLoggedIn(
-                        <li className="loginButton" onClick={() => setIsLoggedIn(false)}> <Link to="/">Log Out</Link></li>
+                        <li className="homeButton logoutButton" onClick={() => setIsLoggedIn(false)}><Link className="linkbutton" to="/">Log Out</Link></li>
+                        
+                        
                         )}
 
                         {ifLoggedIn(
-                        <li className="loginButton"> <Link to="/settings">Settings</Link></li>
+                        <li className="homeButton settingsButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
                         )}
                     </ul>
                 </div>
-                <div className="content">
-
-                <h1>Negative Infinity</h1>
-                </div>
-
-                
-                </div>
-                    
-
-                    
-                    
-                
+               
 
                 <Routes>
                     <Route path="/" element={
@@ -224,7 +230,7 @@ const HomeMenuContainer = () => {
                         />}
                     />
                     <Route path="/my-games" element={
-                        <GamesList games={account.installGames}/>
+                        <MyGamesContainer games={account.installGames}/>
                     }
                     />
 
@@ -237,7 +243,9 @@ const HomeMenuContainer = () => {
                 <Footer />
 
             </div>
+            </Wrapper>
         </BrowserRouter>
+        
     );
 }
  
