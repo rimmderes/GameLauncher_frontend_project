@@ -20,7 +20,16 @@ body {
 
 .products:hover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.22);
-  /* transform: translate(0px, -5px); */
+  animation: products-shadow-move .2s ease-in-out forwards;
+}
+
+@keyframes products-shadow-move {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(0px, -5px);
+  }
 }
 
 .products {
@@ -41,8 +50,9 @@ body {
   margin-left: auto;
   margin-right: auto;
   
-  
 }
+
+
 
 .productcard {
   margin-left: 5cm;
@@ -71,6 +81,7 @@ button {
 
 }
 
+
 /* .banner {
   width: 100%;
   height: 80vh;
@@ -83,7 +94,7 @@ button {
 .content {
   background: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif);
   background-size: cover;
-  background-position: auto;
+  background-position: center;
   
   -webkit-background-clip: text;
   color: transparent; 
@@ -100,9 +111,10 @@ button {
         0 0 90px black,
         0 0 100px black,
         0 0 150px white; */
-  transform: translate(400px);
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
   font-family: 'Hanalei Fill';
-  
 }
 
 .banner {
@@ -262,6 +274,23 @@ button {
   padding: 10px 20px;
   transition: all 0.3s ease-in-out;
 }
+
+.myGamesButton {
+  text-decoration: none;
+  color: greenyellow;
+  border: 0px solid #fff;
+  border-radius: 25px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.myGamesButton:hover {
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0px 0px 10px #fff;
+}
+
+
 /* .myGamesButton {
   text-decoration: none;
   border: 0px solid #fff;
