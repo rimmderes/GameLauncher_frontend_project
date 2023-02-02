@@ -30,7 +30,9 @@ const PurchaseModal = ({closeModal, purchaseGame, account, game}) => {
             <h2>This game costs<div className="redfont">£{game.price}</div></h2>
             <p>Are you sure you want to purchase this?</p>
             <div className="redfont">{error}</div>
-            <button onClick={handleSubmit}> Purchase </button>
+            {console.log(account.name)}
+
+            <button className="purchaseButton" onClick={handleSubmit}> Purchase </button>
 
         </div>
         </div>

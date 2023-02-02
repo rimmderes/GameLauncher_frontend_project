@@ -64,53 +64,65 @@ const Settings =({account, updateAccount})=>{
     return (
         <>
             <div className="settingsTitle">
-                <h3>Settings:</h3>
+                <h3>Settings</h3>
             </div>
             <div className="emojiHead">👤</div>
 
-            <ul>
+            <ul className="settingpadding">
 
                 <div className="settingsText">
                     <form className="settingsForm" role="search" onSubmit={handleSubmit}>
 
-                    <div className="inputWrapper">
-                        <label className="settingslabel" htmlFor="signup_input">Username: </label>
-                            <input
-                                type="text"
-                                placeholder="Type username here..." 
-                                name= "name" 
-                                values={stateUser.name}
-                                onChange={handleChange} />
+                        <div className="inputWrapper">
+                            <label className="settingslabel" htmlFor="signup_input">Username: </label>
+                                <input
+                                    type="text"
+                                    placeholder="Type username here..." 
+                                    name= "name" 
+                                    value={stateUser.name}
+                                    onChange={handleChange}
+                                    />
 
-                                </div> 
+                        </div> 
                         
+                        <div className="inputWrapper">
 
-                        <li className="settingslabel" htmlFor="signup_input">Password:
-                            <input 
-                                type="password" 
-                                placeholder="Type password here..." className="signup_input"
-                                name="password" 
-                                value={stateUser.password}
-                                onChange={handleChange} />
-                        </li>
+                            <label className="settingslabel" htmlFor="signup_input">Password: </label>
+                                <input 
+                                    type="password" 
+                                    placeholder="Type password here..." className="signup_input"
+                                    name="password" 
+                                    value={stateUser.password}
+                                    onChange={handleChange} 
+                                />
+                  
+                        </div> 
 
-                        <li className="settingslabel" htmlFor="signup_input">Email:
-                            <input 
-                                type="text"
-                                placeholder="Type email here..." className="signup_input" 
-                                name="email"
-                                value={stateUser.email}
-                                onChange={handleChange} />
-                        </li>
+                        <div className="inputWrapper">
 
-                        <li className="settingslabel" htmlFor="signup_input">Date of Birth:
-                            <input 
-                                type="date" 
-                                placeholder="Enter DOB here..." className="signup_input" 
-                                name="dateOfBirth"
-                                value={stateUser.dateOfBirth} 
-                                onChange={handleChangeDate} />
-                        </li>
+                            <label className="settingslabel" htmlFor="signup_input">Email: </label>
+                                <input 
+                                    type="text"
+                                    placeholder="Type email here..." className="signup_input" 
+                                    name="email"
+                                    value={stateUser.email}
+                                    onChange={handleChange} 
+                                />
+      
+                        </div> 
+
+                        <div className="inputWrapper">
+
+                            <label className="settingslabel" htmlFor="signup_input">Date of Birth: </label>
+                                <input 
+                                    type="date" 
+                                    placeholder="Enter DOB here..." className="signup_input" 
+                                    name="dateOfBirth"
+                                    value={stateUser.dateOfBirth} 
+                                    onChange={handleChangeDate} 
+                                />
+        
+                        </div> 
 
                     <p>Total wallet:  £{account.wallet} <button>Add to Wallet</button></p> 
 
