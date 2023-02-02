@@ -75,12 +75,13 @@ const SpecificGame = ({games, ifLoggedIn, isLoggedIn, account, purchaseGame })=>
         <>
         <div className='specificGame'>
             <div className='gameContainer'>
-                <div className='controls'>
+            <div className='photo-main'>
+                 <img src="https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png" width={300} height={400} />
+            </div>
+            <div className='controls'>
             <div className='specificGameName'>
         <h3> {game.name} </h3> </div>
-        <div className='photo-main'>
-        <img src="https://image.api.playstation.com/vulcan/ap/rnd/202207/1210/4xJ8XB3bi888QTLZYdl7Oi0s.png" width={300} height={400} />
-        </div>
+       
         <h3>{`Price: £${game.price}`}</h3>
         <p>Publisher: {game.publisher}</p>
         <p>Genre: {game.genre}</p>

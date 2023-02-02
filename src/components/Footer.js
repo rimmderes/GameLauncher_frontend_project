@@ -1,4 +1,4 @@
-import './instagramcopy.png';
+import instagramcopy from './instagramcopy.png';
 
 
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
 
             <ul class="socials">
 
-                 <li><img src={'instagramcopy.png'} alt = "Product Image"/> </li>
+                 <li><img src={instagramcopy} alt = "Product Image" width={50} /> </li>
 
                 <li><img src="snapchatcopy.png" alt = "Product Image" /></li>
 

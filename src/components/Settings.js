@@ -73,14 +73,17 @@ const Settings =({account, updateAccount})=>{
                 <div className="settingsText">
                     <form className="settingsForm" role="search" onSubmit={handleSubmit}>
 
-                        <li className="settingslabel" htmlFor="signup_input">Username:
+                    <div className="inputWrapper">
+                        <label className="settingslabel" htmlFor="signup_input">Username: </label>
                             <input
                                 type="text"
                                 placeholder="Type username here..." 
                                 name= "name" 
-                                value={stateUser.name}
+                                values={stateUser.name}
                                 onChange={handleChange} />
-                        </li>
+
+                                </div> 
+                        
 
                         <li className="settingslabel" htmlFor="signup_input">Password:
                             <input 

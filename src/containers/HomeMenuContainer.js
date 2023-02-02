@@ -182,7 +182,7 @@ const HomeMenuContainer = () => {
                         {loginModal && <LoginModal closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>}
                     
                         {ifLoggedOff(
-                        <li className="signupButton" 
+                        <li className="loginButton" 
                             onClick={() => {setSignupModal(true)}}
                             > Sign Up </li> 
                         )}
@@ -192,7 +192,7 @@ const HomeMenuContainer = () => {
                         {ifLoggedIn (<p id="tempname"> 👤 {account.name}</p>
                             )}
                         {ifLoggedIn(
-                        <li className="signupButton" onClick={() => setIsLoggedIn(false)}> <Link to="/">Log Out</Link></li>
+                        <li className="loginButton" onClick={() => setIsLoggedIn(false)}> <Link to="/">Log Out</Link></li>
                         )}
 
                         {ifLoggedIn(

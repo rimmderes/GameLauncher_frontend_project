@@ -121,6 +121,7 @@ button {
   width: 100%;
   height: 60vh;
   background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(background2.jpg) ;
+
   animation: background-fade-in 2s ease-in-out forwards;
   -webkit-transition: background-image 2s ease-in-out;
   transition: background-image 2s ease-in-out;
@@ -339,9 +340,10 @@ button {
 .specificGame {
   
     display: grid;
-    grid-template-columns: 0.9fr 1fr;
+    grid-template-columns: 1fr;
     margin: auto;
     padding: 2.5em 0;
+    height: 700px;
     /* min-width: 600px; */
     /* background-color: white; */
     /* border-radius: 5px;  */
@@ -350,15 +352,16 @@ button {
 
 .gameContainer {
     align-items: center;
-    display: grid;
+    display: flex;
     /* grid-template-rows: 1fr 1fr; */
     text-align: center;
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    margin: auto;
+    padding: 40px;
+    /* height: 100%; */
     box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
     justify-content: center; }
-    /* position: absolute; *
-}
+
 /* 
 .control { 
   
@@ -407,7 +410,6 @@ footer {
 
   height: auto;
 
-  width: 100vw;
 
   padding-top: 40px;
 
@@ -487,7 +489,7 @@ footer {
 .footer-bottom {
   background: #000;
 
-  width: 100vw;
+  
 
   padding: 20px;
 
@@ -568,9 +570,14 @@ footer {
   font-size: 4em;
 }
 
-/* .settingsLabel {
-  padding-top: 20px;
-} */
+.settingsLabel {
+  /* padding-top: 20px; */
+  padding-right: 5px;
+}
+
+.inputWrapper {
+  margin: 20px 0;
+}
 
 .emojiHead {
   text-align: center;
