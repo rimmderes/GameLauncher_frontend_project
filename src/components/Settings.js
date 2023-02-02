@@ -68,7 +68,7 @@ const Settings =({account, updateAccount})=>{
             </div>
             <div className="emojiHead">👤</div>
 
-            <ul>
+            <ul className="settingsPadding">
 
                 <div className="settingsText">
                     <form className="settingsForm" role="search" onSubmit={handleSubmit}>
@@ -79,40 +79,44 @@ const Settings =({account, updateAccount})=>{
                                 type="text"
                                 placeholder="Type username here..." 
                                 name= "name" 
-                                values={stateUser.name}
+                                value={stateUser.name}
                                 onChange={handleChange}
-                                 />
-                                 {console.log(stateUser.name)}
+                    />
 
-                                </div> 
+                    </div> 
                         
-
-                        <li className="settingslabel" htmlFor="signup_input">Password:
+                    <div className="inputWrapper">
+                        <label className="settingslabel" htmlFor="signup_input">Password: </label>
                             <input 
                                 type="password" 
                                 placeholder="Type password here..." className="signup_input"
                                 name="password" 
                                 value={stateUser.password}
-                                onChange={handleChange} />
-                        </li>
+                                onChange={handleChange} 
+                        />
+                    </div> 
 
-                        <li className="settingslabel" htmlFor="signup_input">Email:
+                    <div className="inputWrapper">
+                        <label className="settingslabel" htmlFor="signup_input">Email: </label>
                             <input 
                                 type="text"
                                 placeholder="Type email here..." className="signup_input" 
                                 name="email"
                                 value={stateUser.email}
-                                onChange={handleChange} />
-                        </li>
+                                onChange={handleChange} 
+                        />
+                    </div>
 
-                        <li className="settingslabel" htmlFor="signup_input">Date of Birth:
+                    <div className="inputWrapper">
+                        <label className="settingslabel" htmlFor="signup_input">Date of Birth:</label>
                             <input 
                                 type="date" 
                                 placeholder="Enter DOB here..." className="signup_input" 
                                 name="dateOfBirth"
                                 value={stateUser.dateOfBirth} 
-                                onChange={handleChangeDate} />
-                        </li>
+                                onChange={handleChangeDate} 
+                        />
+                    </div>
 
                     <p>Total wallet:  £{account.wallet} <button>Add to Wallet</button></p> 
 
