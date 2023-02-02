@@ -6,6 +6,7 @@ import SignupModal from "../components/SignupModal";
 import Search from "../components/Search";
 import SpecificGame from "../components/SpecificGame";
 import HomeGameContainer from "./HomeGameContainer";
+import Settings from "../components/Settings";
 import logo from "./logo.webp"
 
 
@@ -73,8 +74,49 @@ const HomeMenuContainer = () => {
         }) 
         const savedAccount = await response.json();
         setAccount(savedAccount);
+        setAllAccounts([...allAccounts, savedAccount])
         setIsLoggedIn(true)
     };
+
+    const updateAccount = async (customisedAccount) => {
+        const response = await fetch(`http://localhost:8080/accounts/${account.id}`, {
+            method: "PATCH",
+            headers: {'Content-Type' : 'application/json'},
+            body: JSON.stringify(customisedAccount)
+        }) 
+        const updatedAccount = await response.json();
+
+        const updatedAccountList = allAccounts.map((accountInsideAllAccounts)=>{
+            if(accountInsideAllAccounts.id=== updatedAccount.id){
+                return updatedAccount;
+            }
+            return accountInsideAllAccounts;
+        })
+        setAllAccounts(updatedAccountList);
+        setAccount(updatedAccount);
+        setIsLoggedIn(true)
+    };
+
+    const purchaseGame= async (gameFile)=>{
+        const response = await fetch(`http://localhost:8080/accounts/${account.id}`, {
+            method: "PUT",
+            headers: {'Content-Type' : 'application/json'},
+            body: JSON.stringify(gameFile)
+        }) 
+
+        const purchaseInfo = await response.json();
+        const newAccount = purchaseInfo.accountStatus;
+
+        const updatedAccountList = allAccounts.map((accountInsideAllAccounts)=>{
+            if(accountInsideAllAccounts.id=== account.id){
+                return newAccount;
+            }
+            return accountInsideAllAccounts;
+        })
+        setAllAccounts(updatedAccountList);
+        setAccount(newAccount);
+        setIsLoggedIn(true)
+    }
 
     const logInToAnAccount = async (accountName, accountPassword) => {
         let check = false;
@@ -112,54 +154,58 @@ const HomeMenuContainer = () => {
                 
                                     
 
-                {/* <img src="logo.webp" /> */}
+            {/* <img src="logo.webp" /> */}
 
-                    <div className="navbar">
+                <div className="navbar">
 
 
-                        <ul>
-                            <li className="homeButton">
-                                <Link to="/">Home</Link>
-                            </li>
-                            {ifLoggedIn(
-                            <li className="myGamesButton">
-                                <Link to="/my-games">My Games</Link>
-                            </li>
-                            )}
-                        </ul>
+                    <ul>
+                        <li className="homeButton">
+                            <Link to="/">Home</Link>
+                        </li>
+                        {ifLoggedIn(
+                        <li className="myGamesButton">
+                            <Link to="/my-games">My Games</Link>
+                        </li>
+                        )}
+                    </ul>
+                
+                    <ul>
+
+                        {ifLoggedOff(
+                        <li className="loginButton"
+                            onClick={() => {setLoginModal(true)}}
+                            > Login </li> 
+                        )}
+
+                        {loginModal && <LoginModal closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>}
                     
-                        <ul>
+                        {ifLoggedOff(
+                        <li className="signupButton" 
+                            onClick={() => {setSignupModal(true)}}
+                            > Sign Up </li> 
+                        )}
 
-                            {ifLoggedOff(
-                            <li className="loginButton"
-                                onClick={() => {setLoginModal(true)}}
-                                > Login </li> 
-                            )}
+                        {signupModal && <SignupModal closeModal={setSignupModal} postAccount={postAccount}/>} 
 
-                            {loginModal && <LoginModal closeModal={setLoginModal} logInToAnAccount={logInToAnAccount}/>}
-                        
-                            {ifLoggedOff(
-                            <li className="signupButton" 
-                                onClick={() => {setSignupModal(true)}}
-                                > Sign Up </li> 
-                            )}
+                        <p id="tempname">{ifLoggedIn (account.name)}</p>
 
-                            {signupModal && <SignupModal closeModal={setSignupModal} postAccount={postAccount}/>} 
+                        {ifLoggedIn(
+                        <li onClick={() => setIsLoggedIn(false)}> <Link to="/">Log Out</Link></li>
+                        )}
 
-                            <p id="tempname">{ifLoggedIn (account.name)}</p>
+                        {ifLoggedIn(
+                        <li> <Link to="/settings">Settings</Link></li>
+                        )}
+                    </ul>
+                </div>
+                <div className="content">
 
-                            {ifLoggedIn(
-                            <li onClick={() => setIsLoggedIn(false)}> Log Out</li>
-                            )}
-                        </ul>
-                    </div>
-                    <div className="content">
+                <h1>Negative Infinity</h1>
+                </div>
 
-<h1>Negative Infinity</h1>
-</div>
-
-                    
-                    </div>
+                
+                </div>
                     
 
                     
@@ -173,11 +219,16 @@ const HomeMenuContainer = () => {
                     />
                     <Route path="/games/:id" element={
                         <SpecificGame
-                            games={games} ifLoggedIn={ifLoggedIn} isLoggedIn={isLoggedIn} account={account}
+                            games={games} ifLoggedIn={ifLoggedIn} isLoggedIn={isLoggedIn} account={account} purchaseGame={purchaseGame}
                         />}
                     />
                     <Route path="/my-games" element={
                         <GamesList games={account.installGames}/>
+                    }
+                    />
+
+                    <Route path="/settings" element={
+                        <Settings account={account} updateAccount={updateAccount}/>
                     }
                     />
                 </Routes>

@@ -2,24 +2,35 @@ import React from "react";
 import { useState } from 'react';
 
 
-const PurchaseModal = ({closeModal}) => {
+const PurchaseModal = ({closeModal, purchaseGame, account, game}) => {
 
     const [error, setError] = useState("");
 
+    const gameFile = {
+        gameId: game.id
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setError("")
-        closeModal(false)
+        if(parseInt(account.wallet)< parseInt(game.price)){
+            setError("Not enough money!")
+        }
+        else{
+            purchaseGame(gameFile);
+            closeModal(false)
+        }
     }
 
     return ( 
         
         <div className="modalBackground"> 
         <div className="modalContainer purchaseModalContainer">
-            <h2>Are you sure you want to purchase this?</h2>
-            <p>You currently have £ in your account.</p>
-            <button onClick={() => closeModal(false)}> Purchase </button>
+            <span onClick={() => closeModal(false)} class="close">&times;  </span>
+            <h2>You currently have <div className="redfont">£{account.wallet}</div> in your account</h2>
+            <h2>This game costs<div className="redfont">£{game.price}</div></h2>
+            <p>Are you sure you want to purchase this?</p>
+            <div className="redfont">{error}</div>
+            <button onClick={handleSubmit}> Purchase </button>
 
         </div>
         </div>

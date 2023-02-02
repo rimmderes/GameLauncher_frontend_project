@@ -209,7 +209,6 @@ button {
 }
 
 .search {
-    width: 100%;
     text-align: center;
     display: inline-flexbox;
   font-family: 'Hanalei Fill';
@@ -262,8 +261,8 @@ button {
 
 #tempname{
   color: white;
-  transform: translateX(1250px);
-  
+  /* transform: translateX(1250px); */
+  z-index: 1;
 }
 
 .homeButton {
@@ -397,4 +396,8 @@ button {
 	height: 100%;
 	border-radius: 6px;
   float: left;
+}
+
+.redfont{
+  color: red;
 }

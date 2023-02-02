@@ -102,11 +102,13 @@ const SignupModal = ({closeModal, postAccount}) => {
                         name="dateOfBirth"
                         value={stateUser.dateOfBirth} 
                         onChange={handleChangeDate} />
-                        </li>
+                    </li>
+
+                    <input type="submit" value="OK" className="okButton"/>
 
                     
                 </form>
-                <input type="submit" value="OK" className="okButton"/>
+                
             </div>
 
             </ul>

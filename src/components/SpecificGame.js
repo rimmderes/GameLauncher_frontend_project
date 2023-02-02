@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import PurchaseModal from './PurchaseModal';
 
 
-const SpecificGame = ({games, ifLoggedIn, isLoggedIn, account })=>{
+const SpecificGame = ({games, ifLoggedIn, isLoggedIn, account, purchaseGame })=>{
 
     const [purchaseModal, setPurchaseModal] = useState(false);
     const [ownGame, setOwnGame] = useState(false);
@@ -94,7 +94,7 @@ const SpecificGame = ({games, ifLoggedIn, isLoggedIn, account })=>{
             
         > Add to Cart </button>}
 
-        {purchaseModal && <PurchaseModal closeModal={setPurchaseModal}/>}
+        {purchaseModal && <PurchaseModal closeModal={setPurchaseModal} purchaseGame={purchaseGame} account={account} game={game}/>}
                  
         {displayButtons(
             <button > Play</button>

@@ -27,7 +27,7 @@ const LoginModal = ({closeModal, logInToAnAccount}) => {
             <span onClick={() => closeModal(false)} class="close">&times;  </span>
             <div className="title">
                 <h3>Log in here</h3>
-                <p>{error}</p>
+                <p className="redfont">{error}</p>
             </div>
             <ul>
 
@@ -50,7 +50,6 @@ const LoginModal = ({closeModal, logInToAnAccount}) => {
                     </li>
                     <input type="submit" value="OK" className="okButton"/>
 
-                   
 
                 </form>
                
