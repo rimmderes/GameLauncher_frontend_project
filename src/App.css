@@ -91,7 +91,7 @@ button {
   background-attachment: fixed;
 } */
 
-/* .content { */
+  .content {  
   /* background: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif); */
   /* background: url(https://i.pinimg.com/originals/c3/ae/8b/c3ae8b679648b7be5101cb3480ea5cfd.gif); */
  /* background: url(https://i.pinimg.com/originals/5b/ed/00/5bed000df57b090e6f0d91969a80b091.gif); */
@@ -104,29 +104,32 @@ button {
   -webkit-background-clip: text;
   color: transparent;   */
   
-  /* width: 600px; */
-  /* height: 300px; */
+  width: 600px; 
+  height: 300px;
   /* box-sizing: border-box; */
   /* font-size: 70px;
   font-weight: bold;
   line-height: 100px;
   text-align: center;  */
-  /* text-shadow: 
-        0 0 10px rgb(113, 105, 105),
-        0 0 100px rgb(112, 106, 106), 
-         0 0 150px rgb(163, 156, 156);  */
   
-/* 
- transform: translate(-50%, 20%);
+  
+ 
+  transform: translate(-50%, 40%);
   left: 50%;
   position: absolute;
   font-family: 'Hanalei Fill';
 
-    -webkit-text-fill-color: transparent;
+    /* -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-     display:block; 
+     display:block;  */
 
-} */
+     text-shadow: 
+        0 0 90px rgb(251, 246, 246),
+        0 0 70px rgb(254, 247, 247), 
+         0 0 250px rgb(241, 232, 232), 
+         0 0 450px rgb(241, 232, 232); 
+
+}  
 
 .h1 {
   background-color:#fff;
@@ -134,17 +137,19 @@ button {
     display:inline-block; 
     padding:10px; 
     font-weight:bold;
-    font-family:arial;
-    color:transparent;
-    font-size:200px;
+    
+
 }
 
 span { 
-  background: url(https://www.fightersgeneration.com/nf7/char/akira-vf5-water-effect.gif
-  ) -20px -20px repeat;
+  background: url(https://www.fightersgeneration.com/nf7/char/akira-vf5-water-effect.gif 
+   ) 20px 20px repeat;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   display:block;
+  font-size: 70px;
+  flex-wrap: wrap;
+  
 }
 
 
