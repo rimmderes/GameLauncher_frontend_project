@@ -6,7 +6,6 @@
   flex-direction: column;
 }
 
-
 body {
   margin: 0;
   padding: 0;
@@ -14,9 +13,6 @@ body {
   color: rgb(255, 255, 255);
   font-family: 'Hanalei Fill';font-size: 16px;
 }
-
-
-
 
 .products:hover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.22);
@@ -175,7 +171,7 @@ button {
   cursor: pointer;
 } */
 
-.loginButton, .signupButton, .okButton, .homeButton {
+/* .signupButton, .okButton, .homeButton {
   padding: 10px 20px;
   border: 1px solid #fff;
   border-radius: 25px;
@@ -184,14 +180,39 @@ button {
   margin-left: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+} */
+
+.loginButton, .signupButton, .okButton, .homeButton {
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position:relative;
+  overflow: hidden;
+  width: 80px;
+  text-align: center;
+  margin: 20px 10px;
+  margin-top: auto;
+  object-position: center;
 }
+
 
 .loginButton:hover, .signupButton:hover, .okButton .homeButton:hover {
   background-color: #fff;
   background-image: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif);
   /* color: #333; */
   box-shadow: 0px 0px 10px #fff;
+  transform: scale(1.1);
 }
+
+.loginButton:active, .signupButton:active, .okButton .homeButton:active {
+  transform: translateY(3px);
+}
+
 
 .navbar ul li ::after {
   content :'';
@@ -218,7 +239,13 @@ button {
 
 /* MODAL */
 
+
+
 .modalContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 500px;
   height: 500px;
   border-radius: 12px;
@@ -231,7 +258,90 @@ button {
   position: fixed;
   transform: translateX(-750px);
   z-index: 1000;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.5s
 }
+
+input[type="submit"] {
+  padding: 12px 20px;
+  margin-top: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+@-webkit-keyframes animatetop {
+  from {top:-200px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-100px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+
+.loginText {
+  display: flex;
+  align-items: center;
+}
+
+.login_label {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.login_input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 50%;
+}
+
+.okButton {
+  background-color: #5cb85c;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 10px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* .close {
+  position: left;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+} */
+
+.close {
+  color: black;
+  position: absolute;
+  padding: 10px 20px;
+  top: 0;
+  left: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 .purchaseModalContainer{
   transform: none;
   top: 10%; right: 0; left: 0;
@@ -251,13 +361,10 @@ button {
 .modalContainer .title {
   text-align: center;
   font-size: 40px;
-
 }
 
 .modalContainer .loginText {
   text-align: center;
-  
-
 }
 
 #tempname{
@@ -585,6 +692,10 @@ footer {
 
 }
 
+.signup_label {
+  margin-bottom: 1rem;
+  display: block;
+}
 
 
 
