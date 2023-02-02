@@ -105,10 +105,12 @@ const Settings =({account, updateAccount})=>{
                                 onChange={handleChangeDate} />
                         </li>
 
+                    <p>Total wallet:  £{account.wallet} <button>Add to Wallet</button></p> 
+
+
                         <input type="submit" value="Save Changes" className="okButton"/>
 
                     </form>
-                    
                 </div>
 
             </ul>
