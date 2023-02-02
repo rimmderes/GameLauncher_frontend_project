@@ -63,6 +63,13 @@ const SpecificGame = ({games, ifLoggedIn, isLoggedIn, account, purchaseGame })=>
     let currentPlayers = game.players.map((player) => {
         return <p key={player.id}>{player.name}</p>
     })
+
+    const ifPlayersEmpty = (element) => {
+        if(game.players === []) {
+            return "No players"
+        }
+        return element;
+    }
  
     return(
         <>
@@ -102,7 +109,8 @@ const SpecificGame = ({games, ifLoggedIn, isLoggedIn, account, purchaseGame })=>
                 
         
         <p>Players:</p>
-        {currentPlayers}
+        {ifPlayersEmpty (currentPlayers)}
+        
         </div>
         </div>
         </div>

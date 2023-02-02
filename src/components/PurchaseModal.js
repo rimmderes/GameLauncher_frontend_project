@@ -25,7 +25,7 @@ const PurchaseModal = ({closeModal, purchaseGame, account, game}) => {
         
         <div className="modalBackground"> 
         <div className="modalContainer purchaseModalContainer">
-            <span onClick={() => closeModal(false)} class="close">&times;  </span>
+            <span onClick={() => closeModal(false)} className="close">&times;  </span>
             <h2>You currently have <div className="redfont">£{account.wallet}</div> in your account</h2>
             <h2>This game costs<div className="redfont">£{game.price}</div></h2>
             <p>Are you sure you want to purchase this?</p>

@@ -8,6 +8,7 @@ import SpecificGame from "../components/SpecificGame";
 import HomeGameContainer from "./HomeGameContainer";
 import Settings from "../components/Settings";
 import logo from "./logo.webp"
+import Footer from "../components/Footer";
 
 
 
@@ -188,14 +189,14 @@ const HomeMenuContainer = () => {
 
                         {signupModal && <SignupModal closeModal={setSignupModal} postAccount={postAccount}/>} 
 
-                        <p id="tempname">{ifLoggedIn (account.name)}</p>
-
+                        {ifLoggedIn (<p id="tempname"> 👤 {account.name}</p>
+                            )}
                         {ifLoggedIn(
-                        <li onClick={() => setIsLoggedIn(false)}> <Link to="/">Log Out</Link></li>
+                        <li className="signupButton" onClick={() => setIsLoggedIn(false)}> <Link to="/">Log Out</Link></li>
                         )}
 
                         {ifLoggedIn(
-                        <li> <Link to="/settings">Settings</Link></li>
+                        <li className="loginButton"> <Link to="/settings">Settings</Link></li>
                         )}
                     </ul>
                 </div>
@@ -232,6 +233,8 @@ const HomeMenuContainer = () => {
                     }
                     />
                 </Routes>
+
+                <Footer />
 
             </div>
         </BrowserRouter>

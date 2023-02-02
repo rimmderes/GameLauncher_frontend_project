@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const Settings =({account, updateAccount})=>{
 
+    const navigate = useNavigate();
 
     const dateConverterNew = (date)=>{
         const components = date.split("-");
@@ -27,10 +29,10 @@ const Settings =({account, updateAccount})=>{
 
     const [stateUserFinal, setStateUserFinal] = useState(
         {
-            name: "",
-            password: "",
-            dateOfBirth: "",
-            email: ""
+            name: account.name,
+            password: account.password,
+            dateOfBirth: account.dateOfBirth,
+            email: account.email
 
         }
     )
@@ -56,20 +58,22 @@ const Settings =({account, updateAccount})=>{
     const handleSubmit = (event) => {
         event.preventDefault()
         updateAccount(stateUserFinal)
+        navigate("/")
     }
 
     return (
         <>
-            <div className="title">
+            <div className="settingsTitle">
                 <h3>Settings:</h3>
             </div>
+            <div className="emojiHead">👤</div>
 
             <ul>
 
-                <div className="loginText">
-                    <form className="signup" role="search" onSubmit={handleSubmit}>
+                <div className="settingsText">
+                    <form className="settingsForm" role="search" onSubmit={handleSubmit}>
 
-                        <li className="signup_label" htmlFor="signup_input">Username:
+                        <li className="settingslabel" htmlFor="signup_input">Username:
                             <input
                                 type="text"
                                 placeholder="Type username here..." 
@@ -78,7 +82,7 @@ const Settings =({account, updateAccount})=>{
                                 onChange={handleChange} />
                         </li>
 
-                        <li className="signup_label" htmlFor="signup_input">Password:
+                        <li className="settingslabel" htmlFor="signup_input">Password:
                             <input 
                                 type="password" 
                                 placeholder="Type password here..." className="signup_input"
@@ -87,7 +91,7 @@ const Settings =({account, updateAccount})=>{
                                 onChange={handleChange} />
                         </li>
 
-                        <li className="signup_label" htmlFor="signup_input">Email:
+                        <li className="settingslabel" htmlFor="signup_input">Email:
                             <input 
                                 type="text"
                                 placeholder="Type email here..." className="signup_input" 
@@ -96,7 +100,7 @@ const Settings =({account, updateAccount})=>{
                                 onChange={handleChange} />
                         </li>
 
-                        <li className="signup_label" htmlFor="signup_input">Date of Birth:
+                        <li className="settingslabel" htmlFor="signup_input">Date of Birth:
                             <input 
                                 type="date" 
                                 placeholder="Enter DOB here..." className="signup_input" 

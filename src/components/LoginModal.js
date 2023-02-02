@@ -24,7 +24,7 @@ const LoginModal = ({closeModal, logInToAnAccount}) => {
     return ( 
         <div className="modalBackground"> 
         <div className="modalContainer">
-            <span onClick={() => closeModal(false)} class="close">&times;  </span>
+            <span onClick={() => closeModal(false)} className="close">&times;  </span>
             <div className="title">
                 <h3>Log in here</h3>
                 <p className="redfont">{error}</p>
