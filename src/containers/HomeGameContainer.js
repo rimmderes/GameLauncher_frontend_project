@@ -10,7 +10,7 @@ const HomeGameContainer = ({games, filterGames}) => {
              <div className="banner">
                 <div className="content">
 
-                <h1>Negative Infinity</h1>
+                <h1><span>Negative Infinity</span></h1>
                 </div>
 
                 
