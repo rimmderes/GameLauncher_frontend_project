@@ -12,6 +12,7 @@ import Footer from "../components/Footer";
 
 
 
+
 const HomeMenuContainer = () => {
 
     const SERVER_URL = "http://localhost:8080"
@@ -24,6 +25,8 @@ const HomeMenuContainer = () => {
     const [signupModal, setSignupModal] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [hideElement, setHideElement] = useState(false)
+
+
 
 
     useEffect(() => {
@@ -162,11 +165,11 @@ const HomeMenuContainer = () => {
 
                     <ul>
                         <li className="homeButton">
-                            <Link to="/">Home</Link>
+                            <Link className="linkbutton" to="/">Home</Link>
                         </li>
                         {ifLoggedIn(
                         <li className="myGamesButton">
-                            <Link to="/my-games">My Games</Link>
+                            <Link className="linkbutton" to="/my-games">My Games</Link>
                         </li>
                         )}
                     </ul>
@@ -189,14 +192,19 @@ const HomeMenuContainer = () => {
 
                         {signupModal && <SignupModal closeModal={setSignupModal} postAccount={postAccount}/>} 
 
+
                         {ifLoggedIn (<p id="tempname"> 👤 {account.name}</p>
                             )}
+                            
+
                         {ifLoggedIn(
-                        <li className="loginButton" onClick={() => setIsLoggedIn(false)}> <Link to="/">Log Out</Link></li>
+                        <li className="loginButton" onClick={() => setIsLoggedIn(false)}><Link className="linkbutton" to="/">Log Out</Link></li>
+                        
+                        
                         )}
 
                         {ifLoggedIn(
-                        <li className="loginButton"> <Link to="/settings">Settings</Link></li>
+                        <li className="loginButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
                         )}
                     </ul>
                 </div>

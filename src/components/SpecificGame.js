@@ -73,6 +73,7 @@ const SpecificGame = ({games, ifLoggedIn, isLoggedIn, account, purchaseGame })=>
  
     return(
         <>
+        <div className='specificGameTitle'>{game.name}  </div>
         <div className='specificGame'>
             <div className='gameContainer'>
             <div className='photo-main'>
@@ -80,7 +81,7 @@ const SpecificGame = ({games, ifLoggedIn, isLoggedIn, account, purchaseGame })=>
             </div>
             <div className='controls'>
             <div className='specificGameName'>
-        <h3> {game.name} </h3> </div>
+         </div>
        
         <h3>{`Price: £${game.price}`}</h3>
         <p>Publisher: {game.publisher}</p>

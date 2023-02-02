@@ -80,7 +80,9 @@ const Settings =({account, updateAccount})=>{
                                 placeholder="Type username here..." 
                                 name= "name" 
                                 values={stateUser.name}
-                                onChange={handleChange} />
+                                onChange={handleChange}
+                                 />
+                                 {console.log(stateUser.name)}
 
                                 </div> 
                         

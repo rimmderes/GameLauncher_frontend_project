@@ -1,4 +1,8 @@
-import instagramcopy from './instagramcopy.png';
+import instagramcopy from '../instagramcopy.png';
+import snapchatcopy from '../snapchatcopy.png';
+import tikkytokcopy from '../tikkytokcopy.png';
+import twittercopy from '../twittercopy.png';
+import pinterestcopy from '../pinterestcopy.png';
 
 
 const Footer = () => {
@@ -14,13 +18,13 @@ const Footer = () => {
 
                  <li><img src={instagramcopy} alt = "Product Image" width={50} /> </li>
 
-                <li><img src="snapchatcopy.png" alt = "Product Image" /></li>
+                <li><img src={snapchatcopy} alt = "Product Image" width={50}/></li>
 
-                <li><img src="pinterestcopy.png" alt = "Product Image" /></li>
+                <li><img src={tikkytokcopy} alt = "Product Image" width={50}/></li>
 
-                <li><img src="tikkytokcopy.png" alt = "Product Image" /></li>
+                <li><img src={twittercopy} alt = "Product Image" width={50}/></li>
 
-                <li><img src="twittercopy.png" alt = "Product Image" /></li> 
+                <li><img src={pinterestcopy} alt = "Product Image" width={50}/></li> 
 
                 {/* <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li> */}
 
