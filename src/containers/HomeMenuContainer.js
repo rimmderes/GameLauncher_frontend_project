@@ -206,17 +206,6 @@ const HomeMenuContainer = () => {
                         {ifLoggedIn (<p id="tempname"> 👤 {account.name}</p>
                             )}
                             
-<<<<<<< HEAD
-
-                        {ifLoggedIn(
-                        <li className="homeButton logoutButton" onClick={() => setIsLoggedIn(false)}><Link className="linkbutton" to="/">Log Out</Link></li>
-                        
-                        
-                        )}
-
-                        {ifLoggedIn(
-                        <li className="homeButton settingsButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
-=======
 
                         {ifLoggedIn(
                         <li className="homeButton settingsButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
@@ -225,7 +214,6 @@ const HomeMenuContainer = () => {
                         <li className="homeButton logoutButton" onClick={() => setIsLoggedIn(false)}><Link className="linkbutton" to="/">Log Out</Link></li>
                         
                         
->>>>>>> main
                         )}
                     </ul>
                 </div>

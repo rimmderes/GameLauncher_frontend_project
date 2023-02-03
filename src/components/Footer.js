@@ -18,15 +18,6 @@ const Footer = () => {
 
                  <li><img src={instagramcopy} alt = "Productimg" width={50} /> </li>
 
-<<<<<<< HEAD
-                <li><img src={snapchatcopy} alt = "Product Image" width={50}/></li>
-
-                <li><img src={tikkytokcopy} alt = "Product Image" width={50}/></li>
-
-                <li><img src={twittercopy} alt = "Product Image" width={50}/></li>
-
-                <li><img src={pinterestcopy} alt = "Product Image" width={50}/></li> 
-=======
                 <li><img src={snapchatcopy} alt = "Productimg" width={50}/></li>
 
                 <li><img src={tikkytokcopy} alt = "Productimg" width={50}/></li>
@@ -34,7 +25,6 @@ const Footer = () => {
                 <li><img src={twittercopy} alt = "Productimg" width={50}/></li>
 
                 <li><img src={pinterestcopy} alt = "Productimg" width={50}/></li> 
->>>>>>> main
 
                 {/* <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li> */}
 

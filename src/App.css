@@ -504,15 +504,20 @@ input[type="submit"]:hover {
   }
 
 .okButton {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 125px;
   font-family: 'Hanalei Fill';
   padding: 20px 20px;
   /* border: 2px solid rgb(58, 57, 57); */
   border-radius: px;
   color: rgb(0, 0, 0);
   text-decoration: none;
-  margin-left: 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  text-align: center;
 }
 
 .okButton:hover {
