@@ -87,41 +87,87 @@ button {
   background-attachment: fixed;
 } */
 
-.content {
-  background: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif);
+  .content {  
+  /* background: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif); */
+  /* background: url(https://i.pinimg.com/originals/c3/ae/8b/c3ae8b679648b7be5101cb3480ea5cfd.gif); */
+ /* background: url(https://i.pinimg.com/originals/5b/ed/00/5bed000df57b090e6f0d91969a80b091.gif); */
+ /* background: url(https://thumbs.gfycat.com/NaughtyMeaslyIndochinahogdeer-max-1mb.gif); 
+  
+
   background-size: cover;
   background-position: center;
   
   -webkit-background-clip: text;
-  color: transparent; 
+  color: transparent;
   
-  width: 600px;
+  width: 600px; 
   height: 300px;
-  box-sizing: border-box;
-  font-size: 70px;
+  /* box-sizing: border-box; */
+   font-size: 70px;
   font-weight: bold;
-  /* text-align: center; */
   line-height: 100px;
-  text-align: center;
-  /* text-shadow: 
-        0 0 90px black,
-        0 0 100px black,
-        0 0 150px white; */
-  transform: translateX(-50%);
+  text-align: center;  
+  color: rgb(28, 28, 28);
+  
+  
+ 
+  transform: translate(-50%, 15%);
   left: 50%;
   position: absolute;
   font-family: 'Hanalei Fill';
+
+    /* -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+     display:block;  */
+
+     text-shadow: 
+        0 0 90px rgb(195, 195, 195),
+        0 0 70px rgb(195, 195, 195), 
+         0 0 50px rgb(195, 195, 195), 
+         0 0 150px rgb(195, 195, 195); 
+
+}  
+
+.h1 {
+  background-color:#fff;
+    overflow:hidden;
+    display:inline-block; 
+    padding:10px; 
+    font-weight:bold;
+    
+
 }
+
+span { 
+  /* background: url(https://www.fightersgeneration.com/nf7/char/akira-vf5-water-effect.gif 
+   ) 20px 20px repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  display:block;
+  font-size: 70px;
+  flex-wrap: wrap; */
+  
+  
+}
+
+
+
 
 .banner {
   width: 100%;
   height: 60vh;
-  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(background2.jpg) ;
-
+  /* background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(background2.jpg) ; */
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://www.fightersgeneration.com/nf7/char/akira-vf5-water-effect.gif);
+  /* background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://giffiles.alphacoders.com/124/12454.gif); */
   animation: background-fade-in 2s ease-in-out forwards;
   -webkit-transition: background-image 2s ease-in-out;
   transition: background-image 2s ease-in-out;
   /* padding-top: -50%; */
+  background-size: cover;
+  background-position: center;
+
+  
+  
   
 
 }
@@ -193,22 +239,20 @@ button {
   transition: all 0.2s ease-in-out;
   position:relative;
   overflow: hidden;
-  width: 80px;
+  width: 100px;
   text-align: center;
   margin: 20px 10px;
   margin-top: auto;
   object-position: center;
 }
-
-
 .loginButton:hover, .signupButton:hover, .okButton .homeButton:hover {
   background-color: #fff;
-  background-image: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif);
+  /* background-image: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif); */
+  background-image: url(https://i.pinimg.com/originals/c3/ae/8b/c3ae8b679648b7be5101cb3480ea5cfd.gif);
   /* color: #333; */
   box-shadow: 0px 0px 10px #fff;
   transform: scale(1.1);
 }
-
 .loginButton:active, .signupButton:active, .okButton .homeButton:active {
   transform: translateY(3px);
 }
@@ -264,10 +308,33 @@ button {
   animation-duration: 0.5s
 }
 
+.modalContainerSignup{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  color: black;
+  position: fixed;
+  transform: translateX(-913px);
+  z-index: 1000;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.5s
+}
+
 input[type="submit"] {
   padding: 12px 20px;
   margin-top: 20px;
-  background-color: #4CAF50;
+  background-color: #020202;
   color: white;
   border: none;
   border-radius: 4px;
@@ -275,7 +342,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #181818;
 }
 
 @-webkit-keyframes animatetop {
@@ -362,8 +429,17 @@ input[type="submit"]:hover {
   text-align: center;
   font-size: 40px;
 }
+.modalContainerSignup .title {
+  text-align: center;
+  font-size: 40px;
+}
+
 
 .modalContainer .loginText {
+  text-align: center;
+}
+
+.modalContainerSignup .loginText {
   text-align: center;
 }
 
@@ -401,7 +477,7 @@ input[type="submit"]:hover {
 
 .homeButton:hover {
   background-color: #fff;
-  background-image: url(https://media.tenor.com/Jsyw3sFFPXsAAAAd/call-of-duty-wallpaper.gif);
+  background-image: url(https://i.pinimg.com/originals/c3/ae/8b/c3ae8b679648b7be5101cb3480ea5cfd.gif);
 
   color: #333;
   box-shadow: 0px 0px 10px #fff;
@@ -418,6 +494,7 @@ input[type="submit"]:hover {
 .close {
   
   cursor:pointer;
+  text-align: left;
 }
  
   
@@ -449,7 +526,7 @@ input[type="submit"]:hover {
     display: grid;
     grid-template-columns: 1fr;
     margin: auto;
-    padding: 2.5em 0;
+    /* padding: 2.5em 0; */
     height: 700px;
     /* min-width: 600px; */
     /* background-color: white; */
@@ -467,26 +544,31 @@ input[type="submit"]:hover {
     padding: 40px;
     /* height: 100%; */
     box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
-    justify-content: center; }
+    justify-content: center; 
+   background-color: rgb(37, 37, 37);
+   border: 2px;
+   border-radius: 25px;
+  }
 
-/* 
-.control { 
+
+.controls { 
   
 		/* display: flex;  */
-		/* justify-content: space-between; */
-	   /* padding: 0.8em;  */
-		/* color: #fff; */
- /* }   */
+		justify-content: space-between;
+    margin-right: 100px;
+	   padding: 0.8em; 
+		color: #fff;
+ }  
 
 .specificGameName {
   margin-bottom: 0.1em;
 		font-size: 1.5em;
 } 
 
-.page .banner {
+/* .page .banner {
 	display: none;
   visibility: hidden;
-}
+} */
 
 .photo-main {
 	border-radius: 6px 6px 0 0;
@@ -692,10 +774,35 @@ footer {
 
 }
 
+.logoutButton {
+  color: #27bcda;
+}
+
+.linkbutton:-webkit-any-link {
+  color: white;
+  text-decoration: none;
+}
+
+.specificGameTitle {
+  text-align: center;
+  font-size: 3em;
+  /* padding-top: 80px; */
+}
+
+.purchaseButton{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.settingpadding{
+  margin-bottom: 100px;
+}
+
+.logoutButton, .settingsButton{
+  margin-top: 10px;
+}
+
 .signup_label {
   margin-bottom: 1rem;
   display: block;
 }
-
-
-

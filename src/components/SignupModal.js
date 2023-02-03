@@ -58,7 +58,7 @@ const SignupModal = ({closeModal, postAccount}) => {
 
     return ( 
         <div className="modalBackground"> 
-        <div className="modalContainer">
+        <div className="modalContainerSignup">
         <span onClick={() => closeModal(false)} className="close">&times;  </span>
             <div className="title">
                 <h3>Sign Up here:</h3>

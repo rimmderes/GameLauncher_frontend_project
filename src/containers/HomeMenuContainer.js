@@ -87,9 +87,10 @@ const HomeMenuContainer = () => {
             body: JSON.stringify(newAccount)
         }) 
         const savedAccount = await response.json();
-        setAccount(savedAccount);
+        savedAccount.installGames = [];
         setAllAccounts([...allAccounts, savedAccount])
         setIsLoggedIn(true)
+        setAccount(savedAccount);
     };
 
     const updateAccount = async (customisedAccount) => {
@@ -205,6 +206,7 @@ const HomeMenuContainer = () => {
                         {ifLoggedIn (<p id="tempname"> 👤 {account.name}</p>
                             )}
                             
+<<<<<<< HEAD
 
                         {ifLoggedIn(
                         <li className="homeButton logoutButton" onClick={() => setIsLoggedIn(false)}><Link className="linkbutton" to="/">Log Out</Link></li>
@@ -214,6 +216,16 @@ const HomeMenuContainer = () => {
 
                         {ifLoggedIn(
                         <li className="homeButton settingsButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
+=======
+
+                        {ifLoggedIn(
+                        <li className="homeButton settingsButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
+                        )}
+                        {ifLoggedIn(
+                        <li className="homeButton logoutButton" onClick={() => setIsLoggedIn(false)}><Link className="linkbutton" to="/">Log Out</Link></li>
+                        
+                        
+>>>>>>> main
                         )}
                     </ul>
                 </div>

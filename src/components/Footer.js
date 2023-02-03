@@ -16,8 +16,9 @@ const Footer = () => {
 
             <ul class="socials">
 
-                 <li><img src={instagramcopy} alt = "Product Image" width={50} /> </li>
+                 <li><img src={instagramcopy} alt = "Productimg" width={50} /> </li>
 
+<<<<<<< HEAD
                 <li><img src={snapchatcopy} alt = "Product Image" width={50}/></li>
 
                 <li><img src={tikkytokcopy} alt = "Product Image" width={50}/></li>
@@ -25,6 +26,15 @@ const Footer = () => {
                 <li><img src={twittercopy} alt = "Product Image" width={50}/></li>
 
                 <li><img src={pinterestcopy} alt = "Product Image" width={50}/></li> 
+=======
+                <li><img src={snapchatcopy} alt = "Productimg" width={50}/></li>
+
+                <li><img src={tikkytokcopy} alt = "Productimg" width={50}/></li>
+
+                <li><img src={twittercopy} alt = "Productimg" width={50}/></li>
+
+                <li><img src={pinterestcopy} alt = "Productimg" width={50}/></li> 
+>>>>>>> main
 
                 {/* <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li> */}
 
@@ -34,17 +44,17 @@ const Footer = () => {
 
             <div class="footer-bottom">
 
-            <p> &copy; <span id="year"></span> <a href="#">@NegativeInfinity</a> </p>
+            <p> &copy; <a href="/">NegativeInfinity</a> </p>
 
             <div class="footer-menu">
 
                 <ul class="f-menu">
 
-                <li><a href="">Home</a></li>
+                <li>Home</li>
 
-                <li><a href="">About</a></li>
+                <li>About</li>
 
-                <li><a href="">Contact</a></li>
+                <li>Contact</li>
 
                 </ul>
 
