@@ -65,8 +65,8 @@ const SpecificGame = ({games, ifLoggedIn, isLoggedIn, account, purchaseGame })=>
     })
 
     const ifPlayersEmpty = (element) => {
-        if(game.players === []) {
-            return "No players"
+        if(game.players.length===0) {
+            return <p>No players</p>
         }
         return element;
     }

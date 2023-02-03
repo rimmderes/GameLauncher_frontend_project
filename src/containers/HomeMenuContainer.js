@@ -87,9 +87,10 @@ const HomeMenuContainer = () => {
             body: JSON.stringify(newAccount)
         }) 
         const savedAccount = await response.json();
-        setAccount(savedAccount);
+        savedAccount.installGames = [];
         setAllAccounts([...allAccounts, savedAccount])
         setIsLoggedIn(true)
+        setAccount(savedAccount);
     };
 
     const updateAccount = async (customisedAccount) => {
