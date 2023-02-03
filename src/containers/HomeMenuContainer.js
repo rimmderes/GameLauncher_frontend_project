@@ -208,13 +208,12 @@ const HomeMenuContainer = () => {
                             
 
                         {ifLoggedIn(
+                        <li className="homeButton settingsButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
+                        )}
+                        {ifLoggedIn(
                         <li className="homeButton logoutButton" onClick={() => setIsLoggedIn(false)}><Link className="linkbutton" to="/">Log Out</Link></li>
                         
                         
-                        )}
-
-                        {ifLoggedIn(
-                        <li className="homeButton settingsButton"> <Link className="linkbutton" to="/settings">Settings</Link></li>
                         )}
                     </ul>
                 </div>
