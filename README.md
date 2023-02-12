@@ -1,70 +1,130 @@
-# Getting Started with Create React App
+# Team Negative Infinity
+<p align = "center">
+<img width="300" alt= "team logo" src="./readmeimages/logo.png">
+</p>
+
+## Project Description
+
+We wanted to create an online video Game E-commerce website using the Game Launcher Backend project we were provided.
+This application allows you to do various things such as browse games, signup or login and then purchase games which are then stored on your account!
+
+## Instructions
+First the Backend needs to be installed. Instructions for that are on the [Game Launcher](https://github.com/wjstanistreet/FrostByte_game_launcher) repo.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+After cloning the react app, make sure you download the neccessary modules using the command `npm install` in the terminal within the cloned repo.
+Then you can start the app using the command `npm start` which will take you to your browser to view the website.
 
-## Available Scripts
+# Tour of the website
 
-In the project directory, you can run:
+## Home page
+<p align = "center">
+<img width="500" alt= "home page" src="./readmeimages/homepage.png">
+</p>
+When the user opens our website, they our introduced to what is seen above. The user can scroll down to browse games and there is a search filter to assist them.
+<p align = "center">
+<img width="500" alt= "our games" src="./readmeimages/ourgames.png">
+</p>
+<p align = "center">
+<img width="500" alt= "search" src="./readmeimages/search.png">
+</p>
 
-### `npm start`
+## Specific game
+A user can click on the more details button on a game to view that specific game in more detail.
+<p align = "center">
+<img width="500" alt= "home page" src="./readmeimages/specificgame.png">
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Login/Signup
+From the home page, the user is able to login or signup by clicking the associated button in the nav bar.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p align = "center">
+<img width="500" alt= "signup" src="./readmeimages/signup.png">
+</p>
 
-### `npm test`
+<p align = "center">
+<img width="500" alt= "login" src="./readmeimages/login.png">
+</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Simply fill out the appropiate details and click the button to proceed to the logged in page.
 
-### `npm run build`
+## Logged in
+After the user has logged or signed in to an account, they will be returned back to the home page but this time the nav bar is slightly different.
+The users username is displayed as well as different buttons in the nav bar that are unique to someone with an account.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align = "center">
+<img width="500" alt= "logged in" src="./readmeimages/loggedin.png">
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Purchase Game
+When a user now clicks on a specific game, they are given the option to add the game to their cart.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align = "center">
+<img width="500" alt= "purchase option" src="./readmeimages/purchaseoption.png">
+</p>
+By simply clicking on the cart button, a popup displaying your balance, the game cost and an option to purchase appears.
+If the user purcahses the game, the user now has the option to play the game.
 
-### `npm run eject`
+<p align = "center">
+<img width="500" alt= "purchase screen" src="./readmeimages/purchasescreen.png">
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p align = "center">
+<img width="500" alt= "play option" src="./readmeimages/play.png">
+</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Settings
+Finally, a user has the option to change their account details in the settings page
+<p align = "center">
+<img width="500" alt= "settings" src="./readmeimages/settings.png">
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Plan
+We began this project by planning what we want to create using Excalidraw. Below is a picture of our wireframe and our plan.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<p align = "center">
+<img width="500" alt= "wire frame" src="./readmeimages/wireframe.png">
+</p>
+<p align = "center">
+<img width="500" alt= "plan" src="./readmeimages/plan.png">
+</p>
+Additionally, we managed our tasks using Trello to split them between the group as well as see what we need to complete that day.
+<p align = "center">
+<img width="500" alt= "plan" src="./readmeimages/trello.png">
+</p>
 
-## Learn More
+## MVP 
+Our MVP for this project was just the games and users section as shown below.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Games:
+- Display all games
+- Categorical display
+- More info on a specific game (unique page for a game)
+- Filtered searches
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Users:
+- Login
+- Signup
+- Log out
 
-### Code Splitting
+## Extensions
+For our extensions, we wanted to:
+- See games user already owns
+- Purchase games
+- See other users who play the game
+- Implement friendlist
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+We managed to complete all the extensions except the friendlist.
 
-### Analyzing the Bundle Size
+## Future plans
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Add friendlist
+- View someone elses account page
+- Achievement system.
 
-### Making a Progressive Web App
+## Thank you
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Thank you to all the trainers that helped us with the project!
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

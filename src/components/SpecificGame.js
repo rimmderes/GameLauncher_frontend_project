@@ -21,7 +21,6 @@ const SpecificGame = ({games, ifLoggedIn, isLoggedIn, account, purchaseGame })=>
 
     useEffect(() => {
         if(isLoggedIn) {
-            console.log("heyyy");
             const gameOwned = doTheyOwnGame(id) 
             setOwnGame(gameOwned);
             }
@@ -41,9 +40,7 @@ const SpecificGame = ({games, ifLoggedIn, isLoggedIn, account, purchaseGame })=>
 
     const ifOwnedGame =(element)=>{
         if(isLoggedIn){
-            console.log("logged in")
             if(ownGame===false){
-                console.log("dont own game")
                 return element;
             }
         }
@@ -105,9 +102,7 @@ const SpecificGame = ({games, ifLoggedIn, isLoggedIn, account, purchaseGame })=>
 
         {purchaseModal && <PurchaseModal closeModal={setPurchaseModal} purchaseGame={purchaseGame} account={account} game={game}/>}
                  
-        {displayButtons(
-            <button > Play</button>
-        )} 
+        {isLoggedIn && ownGame && <button > Play</button>} 
                 
         
         <p>Players:</p>
